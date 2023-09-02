@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mi primera página web</title>
+</head>
+<body>
+  <h1>Hola mundo</h1>
+  <p>Esta es mi primera página web creada con HTML.</p>
+  <img src="mi-imagen.jpg" alt="Una imagen bonita" width="300" height="200">
+  <a href="https://www.bing.com">Este es un enlace a Bing</a>
+</body>
+</html>
