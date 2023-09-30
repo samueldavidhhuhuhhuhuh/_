@@ -1,3 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 20px;
+    color: #6c757d;
+    font-size: 24px;
+}
+
+.review {
+    border: 1px solid #dee2e6;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.review h2 {
+    color: #6c757d;
+    font-size: 20px;
+}
+
+.review p {
+    color: #495057;
+}
 footer {
     background-color: #000; /* Fondo negro */
     color: #fff; /* Texto blanco */
@@ -62,7 +89,7 @@ footer {
   }
 .contenedor-texto-2 {
     width: 100%; /* Cambia el ancho del contenedor según tus necesidades */
-    height: 400px; /* Cambia la altura del contenedor según tus necesidades */
+    height: 600px; /* Cambia la altura del contenedor según tus necesidades */
     border: 1px solid black;
     display: flex; /* Utilizamos flexbox para centrar la imagen */
     justify-content: center; /* Centra horizontalmente la imagen */
