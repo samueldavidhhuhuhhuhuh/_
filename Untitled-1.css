@@ -1,0 +1,116 @@
+footer {
+    background-color: #000; /* Fondo negro */
+    color: #fff; /* Texto blanco */
+    padding: 20px; /* Espacio interno */
+    
+  }
+  
+  .footer-container {
+    max-width: 100%; /* Ancho máximo del contenedor */
+    margin: auto; /* Centra el contenedor */
+  }
+  
+  .footer-container ul {
+    list-style-type: none; /* Elimina los puntos de la lista */
+  }
+  
+  .footer-container a {
+    color: #fff; /* Enlaces blancos */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+  }
+  
+
+  
+.logo-container img {
+    width: 50px; /* Ajusta el tamaño del logo según tus necesidades */
+    margin-right: 10px; /* Ajusta el margen entre el logo y el texto según tus necesidades */
+}
+
+.container_6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px; /* Ajusta la altura según tus necesidades */
+  }
+  
+  .centered-text {
+    text-align: center;
+  }
+  
+.container {
+    width: 95%; /* Define el ancho del contenedor al 80% del ancho de la pantalla */
+    margin: auto; /* Centra el contenedor en la pantalla */
+    border: 5% solid #000; /* Agrega un borde al contenedor */
+    padding: 10px; /* Agrega un espacio interno al contenedor */
+  }
+  
+
+.contenedor-imagen {
+    width: 100px; /* Cambia el ancho del contenedor según tus necesidades */
+    height: 100px; /* Cambia la altura del contenedor según tus necesidades */
+    display: flex; /* Utilizamos flexbox para centrar la imagen */
+    justify-content: center; /* Centra horizontalmente la imagen */
+    align-items: center; /* Centra verticalmente la imagen */
+  }
+.contenedor-texto-1 {
+    width: 600px; /* Cambia el ancho del contenedor según tus necesidades */
+    height: 100px; /* Cambia la altura del contenedor según tus necesidades */
+    border: 1px solid black;
+    display: flex; /* Utilizamos flexbox para centrar la imagen */
+    justify-content: center; /* Centra horizontalmente la imagen */
+    align-items: center; /* Centra verticalmente la imagen */
+  }
+.contenedor-texto-2 {
+    width: 100%; /* Cambia el ancho del contenedor según tus necesidades */
+    height: 400px; /* Cambia la altura del contenedor según tus necesidades */
+    border: 1px solid black;
+    display: flex; /* Utilizamos flexbox para centrar la imagen */
+    justify-content: center; /* Centra horizontalmente la imagen */
+    align-items: center; /* Centra verticalmente la imagen */
+  }
+.contenedor-texto-3 {
+    width: 100%; /* Cambia el ancho del contenedor según tus necesidades */
+    height: 50px; /* Cambia la altura del contenedor según tus necesidades */
+    border: 1px solid black;
+    display: flex; /* Utilizamos flexbox para centrar la imagen */
+    justify-content: center; /* Centra horizontalmente la imagen */
+    align-items: center; /* Centra verticalmente la imagen */
+  }
+.contenedor-texto-4 {
+    width: 100%; /* Cambia el ancho del contenedor según tus necesidades */
+    height: 400px; /* Cambia la altura del contenedor según tus necesidades */
+    border: 1px solid black;
+    display: flex; /* Utilizamos flexbox para centrar la imagen */
+    justify-content: center; /* Centra horizontalmente la imagen */
+    align-items: center; /* Centra verticalmente la imagen */
+  }
+.contenedor-texto-5 {
+    width: 100%; /* Cambia el ancho del contenedor según tus necesidades */
+    height: 30px; /* Cambia la altura del contenedor según tus necesidades */
+    border: 1px solid black;
+    display: flex; /* Utilizamos flexbox para centrar la imagen */
+    justify-content: center; /* Centra horizontalmente la imagen */
+    align-items: center; /* Centra verticalmente la imagen */
+  }
+.contenedor-texto-6 {
+    width: 100%; /* Cambia el ancho del contenedor según tus necesidades */
+    height: 300px; /* Cambia la altura del contenedor según tus necesidades */
+    border: 1px solid black;
+    display: flex; /* Utilizamos flexbox para centrar la imagen */
+    justify-content: center; /* Centra horizontalmente la imagen */
+    align-items: center; /* Centra verticalmente la imagen */
+  }
+.contenedor-imagen img {
+    max-width: 100%; /* Ajusta el tamaño máximo de la imagen al ancho del contenedor */
+    max-height: 100%; /* Ajusta el tamaño máximo de la imagen a la altura del contenedor */
+}
+.contenedor {
+    position: relative;
+  }
+  
+.menu {
+    position: absolute;
+    top: 100px;
+    right:70px;
+  }
+  
