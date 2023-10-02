@@ -11,11 +11,42 @@ body {
 }
 
 .review {
-    border: 1px solid #dee2e6;
-    margin: 10px;
-    padding: 20px;
-    border-radius: 5px;
+  background-image: url('img-01.jpg');
+  background-size: cover;
+  border: 1px solid #dee2e6;
+  margin: 30px;
+  padding: 20px;
+  border-radius: 5px;
 }
+.pag_ext {
+  padding-left: 30px;
+  background-image: url('formularios-de-google.png');
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+.facebook {
+  padding-left: 30px;
+  background-image: url('facebook\ .png');
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+.instagram {
+  padding-left: 30px;
+  background-image: url('instagram.png');
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+.twitter {
+  padding-left: 30px;
+  background-image: url('gorjeo.png');
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
 
 .review h2 {
     color: #6c757d;
@@ -26,23 +57,25 @@ body {
     color: #495057;
 }
 footer {
-    background-color: #000; /* Fondo negro */
+    background-color: #dee2e6; /* Fondo negro */
     color: #fff; /* Texto blanco */
-    padding: 20px; /* Espacio interno */
+    padding: 40px; /* Espacio interno */
     
   }
   
   .footer-container {
     max-width: 100%; /* Ancho máximo del contenedor */
     margin: auto; /* Centra el contenedor */
+    color: #1c2d3b;
   }
   
   .footer-container ul {
     list-style-type: none; /* Elimina los puntos de la lista */
+    
   }
   
   .footer-container a {
-    color: #fff; /* Enlaces blancos */
+    color: #000000; /* Enlaces blancos */
     text-decoration: none; /* Elimina el subrayado de los enlaces */
   }
   
@@ -97,7 +130,7 @@ footer {
   }
 .contenedor-texto-3 {
     width: 100%; /* Cambia el ancho del contenedor según tus necesidades */
-    height: 50px; /* Cambia la altura del contenedor según tus necesidades */
+    height: 30px; /* Cambia la altura del contenedor según tus necesidades */
     border: 1px solid black;
     display: flex; /* Utilizamos flexbox para centrar la imagen */
     justify-content: center; /* Centra horizontalmente la imagen */
@@ -141,3 +174,15 @@ footer {
     right:70px;
   }
   
+  .navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #6c757d;
+    font-size: 18px;
+}

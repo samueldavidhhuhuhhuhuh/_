@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Página de Registro</title>
+  <link rel="stylesheet" href="extra.css">
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #6c757d;
+    }
+
+    form {
+        background-color: #ffffff;
+        border-radius: 5px;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input, select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        border: 1px solid #dee2e6;
+    }
+
+    button {
+        background-color: #007bff;
+        color: #ffffff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+  </style>
+  <script>
+    function guardarInformacion() {
+      var nombres = document.getElementById("nombres").value;
+      var apellidos = document.getElementById("apellidos").value;
+      var correo = document.getElementById("correo").value;
+      var contraseña = document.getElementById("contraseña").value;
+      var género = document.getElementById("género").value;
+
+      // Guardar la información en el localStorage
+      localStorage.setItem("nombres", nombres);
+      localStorage.setItem("apellidos", apellidos);
+      localStorage.setItem("correo", correo);
+      localStorage.setItem("contraseña", contraseña);
+      localStorage.setItem("género", género);
+
+      alert("¡Registro exitoso!");
+    }
+  </script>
+</head>
+<body>
+  <h1>Página de Registro</h1>
+
+  <form>
+    <label for="nombres">Nombres:</label>
+    <input type="text" id="nombres" required><br>
+
+    <label for="apellidos">Apellidos:</label>
+    <input type="text" id="apellidos" required><br>
+
+    <label for="correo">Correo Electrónico:</label>
+    <input type="email" id="correo" required><br>
+
+    <label for="contraseña">Contraseña:</label>
+    <input type="password" id="contraseña" required><br>
+
+    <label for="género">Género:</label>
+    <select id="género">
+      <option value="masculino">Masculino</option>
+      <option value="femenino">Femenino</option>
+      <option value="otro">Otro</option>
+    </select><br>
+
+    <button type="button" onclick="guardarInformacion()">Registrarse</button>
+  </form>
+<a href="epa.html">Pagina principal</a>
+</body>
+</html>
+
