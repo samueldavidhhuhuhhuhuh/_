@@ -3,17 +3,17 @@ body {
 }
 
 .header {
-    background-color: #f8f9fa;
+    background-color: #ffffff;
     text-align: center;
     padding: 20px;
-    color: #6c757d;
+    color: #ffffff;
     font-size: 24px;
 }
 
 .review {
   background-image: url('img-01.jpg');
   background-size: cover;
-  border: 1px solid #dee2e6;
+  border: 1px solid #000000;
   margin: 30px;
   padding: 20px;
   border-radius: 5px;
@@ -49,7 +49,7 @@ body {
 
 
 .review h2 {
-    color: #6c757d;
+    color: #0c0804;
     font-size: 20px;
 }
 
@@ -57,7 +57,7 @@ body {
     color: #495057;
 }
 footer {
-    background-color: #dee2e6; /* Fondo negro */
+    background-color: #ffffff; /* Fondo negro */
     color: #fff; /* Texto blanco */
     padding: 40px; /* Espacio interno */
     
@@ -66,7 +66,7 @@ footer {
   .footer-container {
     max-width: 100%; /* Ancho máximo del contenedor */
     margin: auto; /* Centra el contenedor */
-    color: #1c2d3b;
+    color: #505050;
   }
   
   .footer-container ul {
@@ -75,15 +75,20 @@ footer {
   }
   
   .footer-container a {
-    color: #000000; /* Enlaces blancos */
+    color: #dbaa06; /* Enlaces blancos */
     text-decoration: none; /* Elimina el subrayado de los enlaces */
   }
   
 
-  
+.logo-container{
+  color:#da8f05;
+  border: 1px solid #000000;
+
+} 
 .logo-container img {
     width: 50px; /* Ajusta el tamaño del logo según tus necesidades */
     margin-right: 10px; /* Ajusta el margen entre el logo y el texto según tus necesidades */
+    
 }
 
 .container_6 {
@@ -98,10 +103,12 @@ footer {
   }
   
 .container {
-    width: 95%; /* Define el ancho del contenedor al 80% del ancho de la pantalla */
-    margin: auto; /* Centra el contenedor en la pantalla */
-    border: 5% solid #000; /* Agrega un borde al contenedor */
-    padding: 10px; /* Agrega un espacio interno al contenedor */
+    background-color: #ffffff;
+    height: 100%;
+    top:0;
+    width: 100%; /* Define el ancho del contenedor al 80% del ancho de la pantalla */
+    left:0;
+    
   }
   
 
@@ -128,17 +135,11 @@ footer {
     justify-content: center; /* Centra horizontalmente la imagen */
     align-items: center; /* Centra verticalmente la imagen */
   }
-.contenedor-texto-3 {
-    width: 100%; /* Cambia el ancho del contenedor según tus necesidades */
-    height: 30px; /* Cambia la altura del contenedor según tus necesidades */
-    border: 1px solid black;
-    display: flex; /* Utilizamos flexbox para centrar la imagen */
-    justify-content: center; /* Centra horizontalmente la imagen */
-    align-items: center; /* Centra verticalmente la imagen */
-  }
+
 .contenedor-texto-4 {
-    width: 100%; /* Cambia el ancho del contenedor según tus necesidades */
-    height: 400px; /* Cambia la altura del contenedor según tus necesidades */
+
+    width: 60%; /* Cambia el ancho del contenedor según tus necesidades */
+    height: 300px; /* Cambia la altura del contenedor según tus necesidades */
     border: 1px solid black;
     display: flex; /* Utilizamos flexbox para centrar la imagen */
     justify-content: center; /* Centra horizontalmente la imagen */
@@ -169,9 +170,10 @@ footer {
   }
   
 .menu {
-    position: absolute;
-    top: 100px;
+    position: sticky;
+    top: 0px;
     right:70px;
+   
   }
   
   .navbar {
@@ -183,6 +185,40 @@ footer {
 
 .navbar a {
     text-decoration: none;
-    color: #6c757d;
+    color: #000000;
     font-size: 18px;
+}
+.slider {
+
+  
+  width: 500px;
+  position: relative;
+  display: flex;
+  overflow: scroll;
+  scroll-snap-type: x mandatory;
+}
+.slider_2 {
+
+  
+  width: 500px;
+  position: relative;
+  display: flex;
+  overflow: scroll;
+  scroll-snap-type: x mandatory;
+}
+.slider img{
+  width: 100%;
+  height: 100%;
+  position: sticky;
+  object-fit: cover;
+  border-radius: 5px;
+  scroll-snap-align: center;
+}
+.slider_2 img{
+  width: 100%;
+  height: 100%;
+  position: sticky;
+  object-fit: cover;
+  border-radius: 5px;
+  scroll-snap-align: center;
 }
