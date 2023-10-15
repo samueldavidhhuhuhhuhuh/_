@@ -15,6 +15,7 @@
     justify-content: center; /* Centra horizontalmente la imagen */
     align-items: center; /* Centra verticalmente la imagen */
     font-size: 150px;
+    z-index: 0;
   }
   .contenedor-texto-2 {
   border: 1px solid #020202;
@@ -25,14 +26,14 @@
   padding-top:10px;    
   position:relative;top: 20px;
   position:relative;left: 200px;
-  
-  display: fixed; /* Utilizamos flexbox para centrar la imagen */
+  z-index: 0;
+
   justify-content: center; /* Centra horizontalmente la imagen */
   
   font-size: 30px;
 }
 .contenedor-texto-3 {
-    border: 1px solid #020202;
+  border: 1px solid #020202;
   
   width: 500px; /* Cambia el ancho del contenedor según tus necesidades */
   height: 30px; /* Cambia la altura del contenedor según tus necesidades */
@@ -42,15 +43,70 @@
   position:relative;left: 200px;
   display: fixed; /* Utilizamos flexbox para centrar la imagen */
   justify-content: center; /* Centra horizontalmente la imagen */
-  
+  z-index: 0;
   font-size: 30px;
 }
-.header {
+.contenedor-texto-4 {
+  border: 1px solid #020202;
+  
+  width: 99%; /* Cambia el ancho del contenedor según tus necesidades */
+  height: 400px; /* Cambia la altura del contenedor según tus necesidades */
+  padding-left: 0px;
+  padding-top:10px;    
+  position:relative;top: 400px;
+  position:relative;left: 20px;
+  z-index: 0;
 
+  justify-content: center; /* Centra horizontalmente la imagen */
+  
+  
+}
+.contenedor_imagenes_1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding:20px;
+  border:1px solid #020202;
+}
+
+.imagen_1, .imagen_2, .imagen_3, .imagen_4 {
+  display: flex;
+  flex-direction: column;
+}
+
+.imagen_1 img, .imagen_2 img, .imagen_3 img, .imagen_4 img {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    font-size: 10px;
+    border:1px solid #020202;
+}
+
+.imagen_1 p, .imagen_2 p, .imagen_3 p, .imagen_4 p {
+    margin-top: auto;
+}
+
+.contenedor_titulo_imagenes {
+  border: 1px solid #020202;
+  width: 500px; /* Cambia el ancho del contenedor según tus necesidades */
+  height: 30px; /* Cambia la altura del contenedor según tus necesidades */
+  padding-left: 80px;
+  padding-top:10px;    
+  position:relative;top: 400px;
+  position:relative;left: 0px;
+  display: fixed; /* Utilizamos flexbox para centrar la imagen */
+  justify-content: center; /* Centra horizontalmente la imagen */
+  z-index: 0;
+  font-size: 50px;
+  font-style: inherit;
+}
+.header {
+  position:sticky;top:0;
   background-color: hsl(0, 0%, 100%);
-  padding: 0px;
-  
-  
+  width: 100%; /* Cambia el ancho del contenedor según tus necesidades */
+  height: 80px; /* Cambia la altura del contenedor según tus necesidades */
+  border: 1px solid #020202;
+  z-index: 1;
   
 }
 
@@ -70,6 +126,7 @@
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 }
+
 
 /* Add styles to the active navigation bar item */
 .header a.active {
@@ -93,11 +150,11 @@
     
     
     <a href="#Introduction" class="active">Caracter U!</a>
-    <a href="#API">API</a>
-    <a href="#ChatBot">ChatBot</a>
-    <a href="#Sponsored">Sponsored</a>
-    <a href="#Comparative">Comparative</a>
-    <a href="#Browser">Browser</a>
+    <a href="#API">Inicio</a>
+    <a href="#ChatBot">Servicios</a>
+    <a href="#Sponsored">Reseñas</a>
+    <a href="#Comparative">Contacto</a>
+    
     
     
     <div class="header-right">
@@ -106,19 +163,99 @@
     </div>
     </div>
     <br>
-        <div class="contenedor-texto-1">
-            Caracter U!
-        </div>
+    <div class="contenedor-texto-1">
+        Caracter U!
+    </div>
+    <br>
+    <div class="contenedor-texto-2">
+        Caracter U! Es una empresa especializada en la limpieza y desinfeccion del hogar a traves de distintos <a  href="extra.html">servicios</a>
+    </div>
+    
+    <div class="contenedor-texto-3">
+        <span style="border: 1px solid black; padding: 2px;"><a href="extra.html">Registrate</a></span> <a  href="https://www.instagram.com/caracter.u/">Siguenos en Instagram</a>
+    </div>
+    <div class="contenedor_titulo_imagenes">
+        Sobre Nosotros    
+    </div>   
+    
+    <div class="contenedor-texto-4">
+        
+        
         <br>
-        <div class="contenedor-texto-2">
-            Caracter U! Es una empresa especializada en la limpieza y desinfeccion del hogar a traves de distintos
-            <a href='URL'>servicios</a>
-        </div>
         <br>
-        <div class="contenedor-texto-3">
-            <span style="border: 1px solid black; padding: 2px;"><a href="extra.html">Registrate</a></span>        sdadsaadsdasda
-        </div>
-            
+        <div class="contenedor_imagenes_1">
+            <div class="imagen_1">
+              <img src="Captura de pantalla (679).png">
+              <p>Texto debajo de la imagen 1</p>
+            </div>
+            <div class="imagen_2">
+              <img src="editable.png">
+              <p>Texto debajo de la imagen 2</p>
+            </div>
+            <div class="imagen_3">
+              <img src="Captura de pantalla (681).png">
+              <p>Texto debajo de la imagen 3</p>
+            </div>
+            <div class="imagen_4">
+              <img src="Captura de pantalla (685).png">
+              <p>Texto debajo de la imagen 4</p>
+            </div>
+          </div>
+          
+          
+    </div>   
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    
+      
+   
 
 
         
@@ -130,7 +267,7 @@
 
 
 
-    </section>
+    
 </div>
 </body>
 </html>
