@@ -1,8 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head>
 <style>
+.container {
+  background-color: #ffffff;
+  height: 100%;
+  top:0;
+  width: 100%; /* Define el ancho del contenedor al 80% del ancho de la pantalla */
+  left:0;
+    
+}
+  
+.text-container{
+  border: 1px solid #020202;
+  width: 200px; /* Cambia el ancho del contenedor según tus necesidades */
+  height: 80px; /* Cambia la altura del contenedor según tus necesidades */   
+  position:relative;top: 50px;
+  position:relative;left:0px;
+  z-index: 0;
+  font-size: 40px;
+  justify-content: center; /* Centra horizontalmente la imagen */
+  
+}
+.image-container {
+  
+  
+  width: 0px; /* Cambia el ancho del contenedor según tus necesidades */
+  height: 0px; /* Cambia la altura del contenedor según tus necesidades */
+  padding:20px;
+  border:1px solid #ff0000;
+  font-size: 20px;
+  font-family:Arial, Helvetica, sans-serif ;
+  position:relative;top: 200px;
+  position:relative;left: 800px;
+  
 
+
+}
 /* Add styles to the header */
 .contenedor-texto-1 {
   
@@ -52,21 +85,58 @@
   width: 99%; /* Cambia el ancho del contenedor según tus necesidades */
   height: 400px; /* Cambia la altura del contenedor según tus necesidades */
   padding-left: 0px;
-  padding-top:10px;    
+  padding-top:0px;    
   position:relative;top: 400px;
   position:relative;left: 20px;
   z-index: 0;
-
+  font-size: 20px;
   justify-content: center; /* Centra horizontalmente la imagen */
   
   
 }
+
+.contenedor-texto-5 {
+  border: 1px solid #020202;
+  
+  width: 99%; /* Cambia el ancho del contenedor según tus necesidades */
+  height: 200px; /* Cambia la altura del contenedor según tus necesidades */
+  padding-left: 0px;
+  padding-top:0px;    
+  position:relative;top: 400px;
+  position:relative;left: 0px;
+  z-index: 0;
+  font-size: 40px;
+ 
+  
+  
+  
+}
+.contenedor-texto-6 {
+  border: 1px solid #020202;
+  
+  width: 99%; /* Cambia el ancho del contenedor según tus necesidades */
+  height: 800px; /* Cambia la altura del contenedor según tus necesidades */
+  padding-left: 0px;
+  padding-top:0px;    
+  position:relative;top: 40px;
+  position:relative;left: 0px;
+  z-index: 0;
+  font-size: 40px;
+  
+  
+  
+  
+}
+
+
 .contenedor_imagenes_1 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   padding:20px;
   border:1px solid #020202;
+  font-size: 20px;
+  font-family:Arial, Helvetica, sans-serif ;
 }
 
 .imagen_1, .imagen_2, .imagen_3, .imagen_4 {
@@ -75,10 +145,9 @@
 }
 
 .imagen_1 img, .imagen_2 img, .imagen_3 img, .imagen_4 img {
-    height: auto;
-    width: 100%;
+    height: 300px;
+    width: 300px;
     object-fit: cover;
-    font-size: 10px;
     border:1px solid #020202;
 }
 
@@ -128,6 +197,24 @@
 }
 
 
+.slider {
+  border:1px solid #020202;
+  position:relative;top: 0px;
+  position:relative;left: 0px;
+  width: 1000px;
+  height: 1000px;;
+  position: relative;
+  display: flex;
+  
+  
+}
+.slider #content {
+  display: inline-block;
+  text-align: center;
+  position:relative;top: 100px;
+  position:relative;left: 0px;
+
+}
 /* Add styles to the active navigation bar item */
 .header a.active {
   background-color: rgb(0, 0, 0);
@@ -142,9 +229,10 @@
 /* Add styles to the search box */
 
 </style>
+<head>
 </head>
 <body>
-<div class="container">
+  <div class="container">
 
     <div class="header">
     
@@ -186,19 +274,20 @@
         <div class="contenedor_imagenes_1">
             <div class="imagen_1">
               <img src="Captura de pantalla (679).png">
-              <p>Texto debajo de la imagen 1</p>
+              <p>¡¡¡Con Caracter U! un lugar lindo pasara a ser hermoso!!!</p>
             </div>
             <div class="imagen_2">
               <img src="editable.png">
-              <p>Texto debajo de la imagen 2</p>
+              <br>
+              <p>Caracter U! te asegura un servicio que erradicara virus y bacterias.</p>
             </div>
             <div class="imagen_3">
               <img src="Captura de pantalla (681).png">
-              <p>Texto debajo de la imagen 3</p>
+              <p>Con Caracter U! podras ofrecerle comodidad incluso a tus mascotas </p>
             </div>
             <div class="imagen_4">
               <img src="Captura de pantalla (685).png">
-              <p>Texto debajo de la imagen 4</p>
+              <p>Te puedes contactar con Caracter U! <a href="https://www.instagram.com/caracter.u/">Instagram has click aqui :3</a></p>
             </div>
           </div>
           
@@ -216,6 +305,78 @@
     <br>
     <br>
     <br>
+    <div class ="contenedor-texto-5">
+      <p>Caracter_U! posee una gran variedad de servicios dado que nos adaptamos a las necesidades de nuestros clientes,aun asi aqui tenemos una muestra de estos:</p>
+     
+      <div class="contenedor-texto-6">
+        <style>
+          button {
+              border:1px solid #020202;
+              font-size: 20px;
+              line-height: 50px;
+              text-align: center;
+              width: 100px;
+              height: 50px;
+              color: yellowgreen;
+              background-color: black;
+              position:relative;top: 0px;
+              position:relative;left: 0px;
+          }
+        </style>
+        <button onclick="changeContent(1)">Button 1</button>
+        <button onclick="changeContent(2)">Button 2</button>
+        <button onclick="changeContent(3)">Button 3</button>
+        <button onclick="changeContent(4)">Button 4</button>
+        <div class="slider">
+            
+            
+            
+        
+          <div class="image-container">
+            <img id="image" src="Captura de pantalla (679).png">
+          </div>
+          <div class="text-container">
+            <p id="text">Default Text</p>
+          </div>
+              
+            
+        </div>
+          
+          <script>
+          function changeContent(buttonNumber) {
+            var image = document.getElementById("image");
+            var text = document.getElementById("text");
+            
+            switch(buttonNumber) {
+              case 1:
+                image.src = "Captura de pantalla (681).png";
+                text.innerHTML = "Text 1";
+                break;
+              case 2:
+                image.src = "Captura de pantalla (685).png";
+                text.innerHTML = "Text 2";
+                break;
+              case 3:
+                image.src = "Captura de pantalla (681).png";
+                text.innerHTML = "Text 3";
+                break;
+              case 4:
+                image.src = "Captura de pantalla (685).png";
+                text.innerHTML = "Text 4";
+                break;
+              default:
+                image.src = "Captura de pantalla (679).png";
+                text.innerHTML = "Default Text";
+                break;
+            }
+          }
+          
+        
+          </script>
+        </div>
+      </div>      
+    </div>   
+
     <br>
     <br>
     <br>
@@ -268,6 +429,6 @@
 
 
     
-</div>
+  </div>
 </body>
 </html>
