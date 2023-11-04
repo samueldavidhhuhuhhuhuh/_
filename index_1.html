@@ -1,23 +1,63 @@
 <!DOCTYPE html>
 <html>
+
 <style>
-.container {
-  background-color: #ffffff;
-  height: 100%;
-  top:0;
-  width: 100%; /* Define el ancho del contenedor al 80% del ancho de la pantalla */
-  left:0;
-    
+  *{
+    background-color: #feaea7;
+  }
+.btn {
+    width: 9em;
+    height: 3em;
+    border-radius: 30em;
+    font-size: 15px;
+    font-family: inherit;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+
 }
+.contenedor_imagenes_1 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding:20px;
+ 
+  font-size: 20px;
+  font-family:Arial, Helvetica, sans-serif ;
+  z-index: 1;
+}
+
+.imagen_1, .imagen_2, .imagen_3, .imagen_4 {
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.imagen_1 img, .imagen_2 img, .imagen_3 img, .imagen_4 img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    z-index: 1;
+   
+}
+
+.imagen_1 p, .imagen_2 p, .imagen_3 p, .imagen_4 p {
+    margin-top: auto;
+    z-index: 1;
+}
+
+
   
 .text-container{
-  border: 1px solid #020202;
-  width: 200px; /* Cambia el ancho del contenedor según tus necesidades */
-  height: 80px; /* Cambia la altura del contenedor según tus necesidades */   
+  
+  width: 1000px; /* Cambia el ancho del contenedor según tus necesidades */
+  height: 1000px; /* Cambia la altura del contenedor según tus necesidades */   
   position:relative;top: 50px;
   position:relative;left:0px;
   z-index: 0;
-  font-size: 40px;
+  font-size: 30px;
   justify-content: center; /* Centra horizontalmente la imagen */
   
 }
@@ -27,46 +67,51 @@
   width: 0px; /* Cambia el ancho del contenedor según tus necesidades */
   height: 0px; /* Cambia la altura del contenedor según tus necesidades */
   padding:20px;
-  border:1px solid #ff0000;
+  
   font-size: 20px;
   font-family:Arial, Helvetica, sans-serif ;
-  position:relative;top: 200px;
-  position:relative;left: 800px;
-  
+  position:absolute;top: 200px;
+  position:absolute;left: 400px;
+  z-index: 1;
 
 
+}
+.image-container img{
+  width: 200px; /* Cambia el ancho del contenedor según tus necesidades */
+  height: 200px; /* Cambia la altura del contenedor según tus necesidades */
+  object-fit: cover;
 }
 /* Add styles to the header */
 .contenedor-texto-1 {
   
-    width: 900px; /* Cambia el ancho del contenedor según tus necesidades */
-    height: 80px; /* Cambia la altura del contenedor según tus necesidades */
-    padding-left: 80px;
+    width: 400px; /* Cambia el ancho del contenedor según tus necesidades */
+    height: 200px; /* Cambia la altura del contenedor según tus necesidades */
+    padding-left: 100px;
     padding-top:100px;    
-    border: 1px solid #020202;
+    color: #ffffff;
     display: flex; /* Utilizamos flexbox para centrar la imagen */
     justify-content: center; /* Centra horizontalmente la imagen */
     align-items: center; /* Centra verticalmente la imagen */
-    font-size: 150px;
+    font-size: 100px;
     z-index: 0;
   }
   .contenedor-texto-2 {
-  border: 1px solid #020202;
   
-  width: 600px; /* Cambia el ancho del contenedor según tus necesidades */
+  
+  width: 540px; /* Cambia el ancho del contenedor según tus necesidades */
   height: 120px; /* Cambia la altura del contenedor según tus necesidades */
-  padding-left: 80px;
+ 
   padding-top:10px;    
   position:relative;top: 20px;
-  position:relative;left: 200px;
+  position:relative;left: 100px;
   z-index: 0;
-
+  color: #ffffff;
   justify-content: center; /* Centra horizontalmente la imagen */
   
   font-size: 30px;
 }
 .contenedor-texto-3 {
-  border: 1px solid #020202;
+  
   
   width: 500px; /* Cambia el ancho del contenedor según tus necesidades */
   height: 30px; /* Cambia la altura del contenedor según tus necesidades */
@@ -76,19 +121,19 @@
   position:relative;left: 200px;
   display: fixed; /* Utilizamos flexbox para centrar la imagen */
   justify-content: center; /* Centra horizontalmente la imagen */
-  z-index: 0;
+  z-index: 3;
   font-size: 30px;
 }
 .contenedor-texto-4 {
-  border: 1px solid #020202;
+  
   
   width: 99%; /* Cambia el ancho del contenedor según tus necesidades */
   height: 400px; /* Cambia la altura del contenedor según tus necesidades */
   padding-left: 0px;
   padding-top:0px;    
-  position:relative;top: 400px;
+  position:relative;top: 200px;
   position:relative;left: 20px;
-  z-index: 0;
+  z-index: 1;
   font-size: 20px;
   justify-content: center; /* Centra horizontalmente la imagen */
   
@@ -96,7 +141,7 @@
 }
 
 .contenedor-texto-5 {
-  border: 1px solid #020202;
+  
   
   width: 99%; /* Cambia el ancho del contenedor según tus necesidades */
   height: 200px; /* Cambia la altura del contenedor según tus necesidades */
@@ -112,11 +157,11 @@
   
 }
 .contenedor-texto-6 {
-  border: 1px solid #020202;
+  
   
   width: 99%; /* Cambia el ancho del contenedor según tus necesidades */
   height: 800px; /* Cambia la altura del contenedor según tus necesidades */
-  padding-left: 0px;
+  padding-left: 150px;
   padding-top:0px;    
   position:relative;top: 40px;
   position:relative;left: 0px;
@@ -129,53 +174,41 @@
 }
 
 
-.contenedor_imagenes_1 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+.contenedor_imagenes_2 {
+  display: flex;
+  position:absolute;top: -450px;
+  position:absolute;left: 450px;
+  z-index: 0;
   gap: 10px;
   padding:20px;
-  border:1px solid #020202;
+  
   font-size: 20px;
   font-family:Arial, Helvetica, sans-serif ;
 }
 
-.imagen_1, .imagen_2, .imagen_3, .imagen_4 {
-  display: flex;
-  flex-direction: column;
-}
 
-.imagen_1 img, .imagen_2 img, .imagen_3 img, .imagen_4 img {
-    height: 300px;
-    width: 300px;
-    object-fit: cover;
-    border:1px solid #020202;
-}
-
-.imagen_1 p, .imagen_2 p, .imagen_3 p, .imagen_4 p {
-    margin-top: auto;
-}
 
 .contenedor_titulo_imagenes {
-  border: 1px solid #020202;
+  
   width: 500px; /* Cambia el ancho del contenedor según tus necesidades */
   height: 30px; /* Cambia la altura del contenedor según tus necesidades */
   padding-left: 80px;
   padding-top:10px;    
-  position:relative;top: 400px;
+  position:relative;top: 200px;
   position:relative;left: 0px;
   display: fixed; /* Utilizamos flexbox para centrar la imagen */
   justify-content: center; /* Centra horizontalmente la imagen */
-  z-index: 0;
+  z-index: 2;
   font-size: 50px;
   font-style: inherit;
 }
 .header {
   position:sticky;top:0;
-  background-color: hsl(0, 0%, 100%);
+  color: #ffffff;
   width: 100%; /* Cambia el ancho del contenedor según tus necesidades */
   height: 80px; /* Cambia la altura del contenedor según tus necesidades */
-  border: 1px solid #020202;
-  z-index: 1;
+  background-color: #feaea7;
+  z-index: 4;
   
 }
 
@@ -187,7 +220,7 @@
 /* Add styles to the navigation bar */
 .header a {
   float: left;
-  color: black;
+  background-color: #feaea7;
   text-align: center;
   padding: 12px;
   text-decoration: none;
@@ -198,12 +231,12 @@
 
 
 .slider {
-  border:1px solid #020202;
-  position:relative;top: 0px;
-  position:relative;left: 0px;
+  
+  position:absolute;top: 0px;
+  position:absolute;left: 0px;
   width: 1000px;
   height: 1000px;;
-  position: relative;
+  
   display: flex;
   
   
@@ -211,169 +244,267 @@
 .slider #content {
   display: inline-block;
   text-align: center;
-  position:relative;top: 100px;
-  position:relative;left: 0px;
+  position:absolute;top: 0px;
+  position:absolute;left: 0px;
 
 }
+
 /* Add styles to the active navigation bar item */
 .header a.active {
-  background-color: rgb(0, 0, 0);
+  background-color: #feaea7;
   color: white;
+  padding-left: 100px;
+  z-index: 4;
 }
 
 /* Add styles to the right-aligned navigation bar item */
 .header-right {
   float: right;
+  z-index: 4;
+  padding-right: 100px;
 }
 
 /* Add styles to the search box */
 
 </style>
 <head>
+  <div class="header">
+    
+    
+    <a class="active">Caracter U!</a>
+  
+  
+  
+  
+    <div class="header-right">
+        
+      <a href="#Inicio">Home</a>
+      <a href="#Nosotros">About</a>
+      <a href="#Servicios">Services</a>
+      <a href="#Reseñas">Reseñas</a>
+      <a href="#Contacto">Contacto</a>
+    </div>
+  </div>
 </head>
 <body>
   <div class="container">
 
-    <div class="header">
     
-    
-    <a href="#Introduction" class="active">Caracter U!</a>
-    <a href="#API">Inicio</a>
-    <a href="#ChatBot">Servicios</a>
-    <a href="#Sponsored">Reseñas</a>
-    <a href="#Comparative">Contacto</a>
-    
-    
-    
-    <div class="header-right">
-        
-        <a href="extra.html">Registrate</a>
-    </div>
-    </div>
     <br>
+    <h2 id="Inicio"></h2>
     <div class="contenedor-texto-1">
-        Caracter U!
+        Coffee Drink 3D
     </div>
     <br>
     <div class="contenedor-texto-2">
-        Caracter U! Es una empresa especializada en la limpieza y desinfeccion del hogar a traves de distintos <a  href="extra.html">servicios</a>
+      lets help discover the best coffee drink of the week
     </div>
     
     <div class="contenedor-texto-3">
-        <span style="border: 1px solid black; padding: 2px;"><a href="extra.html">Registrate</a></span> <a  href="https://www.instagram.com/caracter.u/">Siguenos en Instagram</a>
-    </div>
-    <div class="contenedor_titulo_imagenes">
-        Sobre Nosotros    
+        <style>
+            .btn {
+                  width: 9em;
+                  height: 3em;
+                  border-radius: 30em;
+                  font-size: 15px;
+                  font-family: inherit;
+                  border: none;
+                  position: relative;
+                  cursor: pointer;
+                  overflow: hidden;
+                  color: #ffffff;
+                  z-index: 1;
+                  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff ;
+                  left: -150px;
+            }
+  
+            .btn::before {
+                  content: '';
+                  width: 0;
+                  height: 3em;
+                  border-radius: 30em;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  background-image: linear-gradient(to right, #fca4a6 0%,#C1576A,#A83E51 100%);
+                  transition: .5s ease;
+                  display: block;
+                  z-index: -1;
+            }
+              .btn:hover::before {
+                  width: 9em;
+  
+          
+              }
+              
+  
+            
+            
+          </style>
+
+          <div class ="contenedor_imagenes_2">
+            <img src="vasos (1).PNG">
+          </div>
+          
+          <button class="btn">Get Started</button></a>
+   
+        </div>
+    
+   <div class="contenedor_titulo_imagenes"> 
+         <h2 id="Nosotros"></h2> 
+         <br>
+         Sobre Nosotros    
+   
     </div>   
     
     <div class="contenedor-texto-4">
+       <br>
+       <br>
+       <br>
         
-        
-        <br>
-        <br>
-        <div class="contenedor_imagenes_1">
-            <div class="imagen_1">
-              <img src="Captura de pantalla (679).png">
-              <p>¡¡¡Con Caracter U! un lugar lindo pasara a ser hermoso!!!</p>
-            </div>
-            <div class="imagen_2">
-              <img src="editable.png">
-              <br>
-              <p>Caracter U! te asegura un servicio que erradicara virus y bacterias.</p>
-            </div>
-            <div class="imagen_3">
-              <img src="Captura de pantalla (681).png">
-              <p>Con Caracter U! podras ofrecerle comodidad incluso a tus mascotas </p>
-            </div>
-            <div class="imagen_4">
-              <img src="Captura de pantalla (685).png">
-              <p>Te puedes contactar con Caracter U! <a href="https://www.instagram.com/caracter.u/">Instagram has click aqui :3</a></p>
-            </div>
+       <br>
+       <br>
+      
+      <div class="contenedor_imagenes_1">
+          <div class="imagen_1">
+            <img src="vasos (1).PNG">
+            <p>¡¡¡Con Caracter U! un lugar lindo pasara a ser hermoso!!!</p>
           </div>
+          <div class="imagen_2">
+            <img src="vasos (1).PNG">
+            <br>
+            <p>Caracter U! te asegura un servicio que erradicara virus y bacterias.</p>
+          </div>
+          <div class="imagen_3">
+            <img src="vasos (1).PNG">
+            <p>Con Caracter U! podras ofrecerle comodidad incluso a tus mascotas </p>
+          </div>
+          <div class="imagen_4">
+            <img src="vasos (1).PNG">
+            <p>Te puedes contactar con Caracter U! <a href="https://www.instagram.com/caracter.u/">Instagram has click aqui :3</a></p>
+          </div>
+        </div>
           
           
-    </div>   
+      </div>  
+      <br>
+      <br>
+      <br> 
+   </div>
     <br>
     <br>
     <br>
+    
     <br>
     <br>
+    
     <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    
     <div class ="contenedor-texto-5">
+      
+      
       <p>Caracter_U! posee una gran variedad de servicios dado que nos adaptamos a las necesidades de nuestros clientes,aun asi aqui tenemos una muestra de estos:</p>
-     
+      <h2 id="Servicios"></h2>
+      <br>
+      
       <div class="contenedor-texto-6">
+
         <style>
+          
+          
           button {
-              border:1px solid #020202;
-              font-size: 20px;
-              line-height: 50px;
-              text-align: center;
-              width: 100px;
-              height: 50px;
-              color: yellowgreen;
-              background-color: black;
-              position:relative;top: 0px;
-              position:relative;left: 0px;
-          }
+                  width: 9em;
+                  height: 3em;
+                  border-radius: 30em;
+                  font-size: 15px;
+                  font-family: inherit;
+                  border: none;
+                  position: relative; left: 150px;
+                  cursor: pointer;
+                  overflow: hidden;
+                  color: #ffffff;
+                  
+                  z-index: 1;
+                  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff ;
+                  left: -150px;
+            }
+  
+            button::before {
+                  content: '';
+                  width: 0;
+                  height: 3em;
+                  border-radius: 30em;
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  background-image: linear-gradient(to right, #fca4a6 0%,#C1576A,#A83E51 100%);
+                  transition: .5s ease;
+                  display: block;
+                  z-index: -1;
+            }
+              button:hover::before {
+                  width: 9em;
+  
+          
+              }
         </style>
         <button onclick="changeContent(1)">Button 1</button>
         <button onclick="changeContent(2)">Button 2</button>
         <button onclick="changeContent(3)">Button 3</button>
         <button onclick="changeContent(4)">Button 4</button>
-        <div class="slider">
-            
-            
-            
+        <div class="idcontainer">
+          <a id="Servicios"></a> 
+        </div>
         
+        <div class="slider">
+          
           <div class="image-container">
-            <img id="image" src="Captura de pantalla (679).png">
+            
+            <img id="image" src="vasos (1).PNG">
           </div>
+          
           <div class="text-container">
-            <p id="text">Default Text</p>
+            
+            <p id="text">Para nosotros lo mas importante eres tu y por eso cada servicio es unico, aun asi es nuestro deber como empresa mostrar la calidad y excelencia en nuestros servicios es por eso que aqui veras nuestros servicios mas solicitados </p>
           </div>
               
             
-        </div>
-          
-          <script>
-          function changeContent(buttonNumber) {
-            var image = document.getElementById("image");
-            var text = document.getElementById("text");
-            
-            switch(buttonNumber) {
-              case 1:
-                image.src = "Captura de pantalla (681).png";
-                text.innerHTML = "Text 1";
-                break;
-              case 2:
-                image.src = "Captura de pantalla (685).png";
-                text.innerHTML = "Text 2";
-                break;
-              case 3:
-                image.src = "Captura de pantalla (681).png";
-                text.innerHTML = "Text 3";
-                break;
-              case 4:
-                image.src = "Captura de pantalla (685).png";
-                text.innerHTML = "Text 4";
-                break;
-              default:
-                image.src = "Captura de pantalla (679).png";
-                text.innerHTML = "Default Text";
-                break;
-            }
-          }
-          
         
+       
+          <script>
+            function changeContent(buttonNumber) {
+              var image = document.getElementById("image");
+              var text = document.getElementById("text");
+              
+              switch(buttonNumber) {
+                case 1:
+                  image.src = "vasos (1).PNG";
+                  text.innerHTML = "Nuestro servicio de mantenimiento:Consta de una limpieza profunda del material que se compone el mueble de esta manera lucira como nuevo al retirar los excesos de piel, grasa, polvo, pelos, boronas, residuos comunes, etc...";
+                  break;
+                case 2:
+                  image.src = "vasos (1).PNG";
+                  text.innerHTML = "Retiramiento de manchas:Este servicio a diferencia del numero 1° requiere un estudio del liquido u objeto que causo la mancha y por ende utilizamos diferentes productos segun sea el caso ";
+                  break;
+                case 3:
+                  image.src = "vasos (1).PNG";
+                  text.innerHTML = "Desinfeccion:Al igual que el numero dos requiere un estudio previo a la limpieza dado el tipo de posible parasito presente en el mueble";
+                  break;
+                case 4:
+                  image.src = "vasos (1).PNG";
+                  text.innerHTML = "Finalmente te invito a que te registres nos cuentes tu caso y de esa manera podamos ofrecerte un servicio de calidad";
+                  break;
+                default:
+                  image.src = "vasos (1).PNG";
+                  text.innerHTML = "Para nosotros lo mas importante eres tu y por eso cada servicio es unico, aun asi es nuestro deber como empresa mostrar la calidad y excelencia en nuestros servicios es por eso que aqui veras nuestros servicios mas solicitados ";
+                  break;
+              }
+            }
+            
+          
           </script>
+          
         </div>
+        
       </div>      
     </div>   
 
@@ -382,6 +513,59 @@
     <br>
     <br>
     <br>
+  
+        
+      
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    
+      
+   
+
+
+        
+
+        
+        
+        
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  
+        
+      
     <br>
     <br>
     <br>
@@ -425,6 +609,373 @@
         
         
         
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  
+        
+      
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    
+      
+   
+
+
+        
+
+        
+        
+        
+        
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  
+        
+      
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    
+      
+   
+
+
+        
+
+        
+        
+        
+        
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  
+        
+      
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    
+      
+   
+
+
+        
+
+        
+        
+        
+        
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  
+        
+      
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    
+      
+   
+
+
+        
+
+        
+        
+        
+        
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  
+        
+      
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    
+      
+   
+
+
+        
+
+        
+        
+        
+        
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  
+        
+      
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    
+      
+   
+
+
+        
+
+        
+        
+        
+        
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  
+        
+      
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    
+      
+   
+
+
+        
+
+        
+        
+        
+        
+
+
 
 
 

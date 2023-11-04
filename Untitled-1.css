@@ -2,13 +2,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.header {
-    background-color: #ffffff;
-    text-align: center;
-    padding: 20px;
-    color: #ffffff;
-    font-size: 24px;
-}
+
 
 .review {
   background-image: url('img-01.jpg');
@@ -138,13 +132,13 @@ footer {
 
 .contenedor-texto-4 {
 
-    width: 60%; /* Cambia el ancho del contenedor según tus necesidades */
-    height: 300px; /* Cambia la altura del contenedor según tus necesidades */
-    border: 1px solid black;
-    display: flex; /* Utilizamos flexbox para centrar la imagen */
-    justify-content: center; /* Centra horizontalmente la imagen */
-    align-items: center; /* Centra verticalmente la imagen */
-  }
+  width: 60%; /* Cambia el ancho del contenedor según tus necesidades */
+  height: 300px; /* Cambia la altura del contenedor según tus necesidades */
+  border: 1px solid black;
+  display: flex; /* Utilizamos flexbox para centrar la imagen */
+  justify-content: center; /* Centra horizontalmente la imagen */
+  align-items: center; /* Centra verticalmente la imagen */
+}
 .contenedor-texto-5 {
     width: 100%; /* Cambia el ancho del contenedor según tus necesidades */
     height: 30px; /* Cambia la altura del contenedor según tus necesidades */
