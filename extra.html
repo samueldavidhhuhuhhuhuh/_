@@ -4,48 +4,267 @@
   <title>Página de Registro</title>
   <link rel="stylesheet" href="extra.css">
   <style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f8f9fa;
-        padding: 20px;
-    }
+    *{
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.contenedor_2{
+  z-index: 100;
+  position:fixed;top:1000;
+  position:fixed;left: 120px;
+  padding-left:450px;
+  padding-top:390px;  
+  
+}
+button {
+            width: 9em;
+            height: 3em;
+            border-radius: 30em;
+            font-size: 15px;
+            font-family: inherit;
+            border: none;
+            position: relative; left: 0px;
+            cursor: pointer;
+            overflow: hidden;
+            color: #2f5874;
+            background-color: #ffffff8a;
+            z-index: 29;
+            box-shadow: none;
+            left: 150px;
+      }
 
-    h1 {
-        text-align: center;
-        color: #6c757d;
-    }
+      button::before {
+            content: '';
+            width: 0;
+            height: 3em;
+            border-radius: 30em;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: linear-gradient(to right, #6d7681 0%,#2d3158,#0a1a47 100%);
+            transition: 0.5s ease;
+            display: block;
+            z-index: 30;
+      }
+        button:hover::before {
+            width: 9em;
 
-    form {
-        background-color: #ffffff;
-        border-radius: 5px;
-        padding: 20px;
-        margin-top: 20px;
-    }
+    
+        }
+.contenedor-texto-1 {
+  
+  width: 400px; /* Cambia el ancho del contenedor según tus necesidades */
+  height: 200px; /* Cambia la altura del contenedor según tus necesidades */
+  padding-left: 0px;
+  padding-top:100px;    
+  color: #3f4864;
+  display: flex; /* Utilizamos flexbox para centrar la imagen */
+  justify-content: center; /* Centra horizontalmente la imagen */
+  align-items: center; /* Centra verticalmente la imagen */
+  font-size: 100px;
+  z-index: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #23242a;
+}
 
-    label {
-        display: block;
-        margin-bottom: 10px;
-    }
+.box{
+    position: relative;
+    width: 380px;
+    height: 550px;
+    background: #e4cccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
 
-    input, select {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 20px;
-        border-radius: 5px;
-        border: 1px solid #dee2e6;
-    }
+.box::before{
+    width: 380px;
+    height: 420px;
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    transform-origin: bottom right;
+    background: linear-gradient(0deg,transparent,transparent,#0490ee,#0490ee,#0490ee);
+    z-index: 1;
+    animation: animate 6s linear infinite;
 
-    button {
-        background-color: #007bff;
-        color: #ffffff;
-        padding: 10px 20px;
-        border-radius: 5px;
-        border: none;
-    }
+}
+.box::after{
+    width: 380px;
+    height: 420px;
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    transform-origin: bottom right;
+    background: linear-gradient(0deg,transparent,transparent,#0490ee,#0490ee,#0490ee);
+    z-index: 1;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+.borderLine{
+    position: absolute;
+    top: 0;
+    inset: 0;
 
-    button:hover {
-        background-color: #0056b3;
+}
+
+.borderLine::before {
+    width: 380px;
+    height: 420px;
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    transform-origin: bottom right;
+    background: linear-gradient(0deg,transparent,transparent,#cfee04,#cfee04,#cfee04);
+    z-index: 1;
+    animation: animate 6s linear infinite;
+    animation-delay: -1.5s;
+}
+
+.borderLine::after {
+    width: 380px;
+    height: 420px;
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    transform-origin: bottom right;
+    background: linear-gradient(0deg,transparent,transparent,#cfee04,#cfee04,#cfee04);
+    z-index: 1;
+    animation: animate 6s linear infinite;
+    animation-delay: -4.5s;
+}
+
+@keyframes animate{
+    0%{
+    transform: rotate(0deg);
     }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.box form {
+    position: absolute;
+    inset: 4px;
+    background: #222;
+    padding: 50px 40px;
+    border-radius: 8px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.box form h2 {
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+
+.box form .inputBox{
+    position: relative;
+    width: 300px;
+    margin-top: 35px;
+}
+
+.box form .inputBox input {
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    outline: none;
+    color: #030303;
+    box-shadow: none;
+    font-size: 1em;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    z-index: 10;
+    border: none;
+
+}
+.box form .inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 20px 0px 10px;
+    pointer-events: none;
+    color: #8f8f8f;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+
+.box form .inputBox input:valid ~ span,
+.box form .inputBox input:focus ~ span{
+    color: #fff;
+    font-size: 0.75em;
+    transform: translateY(-34px);
+}
+
+.box form .inputBox i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.box form .inputBox input:valid ~ i,
+.box form .inputBox input:focus ~ i{
+    height: 44px;
+}
+
+.box form .links{
+    display: flex;
+    justify-content: space-between;
+}
+
+.box form .links a{
+    margin: 10px 0;
+    font-size: 0.75em;
+    color: #8f8f8f;
+    text-decoration: none;
+}
+
+.box form .links a:hover,
+.box form .links a:nth-child(2)
+{
+    color: #fff;
+}
+
+.box form input[type="submit"]
+{
+    border: none;
+    outline: none;
+    padding: 9px 25px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 0.9em;
+    border-radius: 4px;
+    width: 100px;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.box form input[type="submit"]:active{
+    opacity: 0.8;
+} 
   </style>
   <script>
     function guardarInformacion() {
@@ -67,36 +286,46 @@
   </script>
 </head>
 <body>
-  <h1>Página de Registro</h1>
+  <div class="contenedor-texto-1">
+    Coffee Drink 3D
+  </div> 
+  <div class = "box">
+    <span class = "borderline"></span>
+    
+      <form>
+        <label for="nombres"><h2 >Nombres:</h2></label>
+        <input type="text" id="nombres" required><br>
 
-  <form>
-    <label for="nombres">Nombres:</label>
-    <input type="text" id="nombres" required><br>
+        <label for="apellidos"><h2 >Apellidos:</h2></label>
+        <input type="text" id="apellidos" required><br>
 
-    <label for="apellidos">Apellidos:</label>
-    <input type="text" id="apellidos" required><br>
+        <label for="correo"><h2 >Correo Electrónico:</h2></label>
+        <input type="email" id="correo" required><br>
 
-    <label for="correo">Correo Electrónico:</label>
-    <input type="email" id="correo" required><br>
+        <label for="Contraseña"><h2>Contaseña:</h2> </label>
+        <input type="password" id="Contraseña" required><br>
 
-    <label for="Contraseña">Contaseña:</label>
-    <input type="password" id="Contraseña" required><br>
+        <label for="Numero_de_contacto"><h2>Numero de contacto:</h2></label>
+        <input type="number" id="Numero_de_contacto" required><br>
 
-    <label for="Numero_de_contacto">Numero de contacto:</label>
-    <input type="number" id="Numero_de_contacto" required><br>
-
-    <label for="Servicios">¿Que servicio desea adquirir?:</label>
-    <select id="Servicio">
-      <option value="Mantenimiento">Mantenimiento</option>
-      <optgiion value="Desinfeccion">Limpieza Higienica</optgiion>
-      <option value="Manchas">Limpieza Extrema</option>
+        <label for="Servicios"><h2>¿Que servicio desea adquirir?:</h2></label>
+        <select id="Servicio">
+          <option value="Mantenimiento">Mantenimiento</option>
+          <option value="Desinfeccion">Limpieza Higienica</option>
+          <option value="Manchas">Limpieza Extrema</option>
+          
+          <option value="otro"><h2>Otro</h2></option>
+        </select><br>
+        
+        <button type="button" onclick="guardarInformacion()">Registrarse</button>
+        
+      </form>
       
-      <option value="otro">Otro</option>
-    </select><br>
-
-    <button type="button" onclick="guardarInformacion()">Registrarse</button>
-  </form>
-<a href="index_1.html">Pagina principal</a>
+  </div>
+  <div class = contenedor_2>
+    <button class="btn" onclick="window.open('index_1.html')">Pagina Principal</button>
+  </div>
+  
 </body>
 </html>
 
