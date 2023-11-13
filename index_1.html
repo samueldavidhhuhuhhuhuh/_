@@ -5,19 +5,42 @@
   *{
     background-color: #feaea7;
   }
-.btn {
-    width: 9em;
-    height: 3em;
-    border-radius: 30em;
-    font-size: 15px;
-    font-family: inherit;
-    border: none;
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-    z-index: 1;
+button {
+            width: 9em;
+            height: 3em;
+            border-radius: 30em;
+            font-size: 15px;
+            font-family: inherit;
+            border: none;
+            position: relative; left: 150px;
+            cursor: pointer;
+            overflow: hidden;
+            color: #ffffff;
+            
+            z-index: 1;
+            box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff ;
+            left: -150px;
+      }
 
-}
+      button::before {
+            content: '';
+            width: 0;
+            height: 3em;
+            border-radius: 30em;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: linear-gradient(to right, #fca4a6 0%,#C1576A,#A83E51 100%);
+            transition: .5s ease;
+            display: block;
+            z-index: -1;
+      }
+        button:hover::before {
+            width: 9em;
+
+    
+        }
+
 .contenedor_imagenes_1 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -263,7 +286,9 @@
   z-index: 4;
   padding-right: 100px;
 }
-
+body a{
+  text-decoration: none;
+}
 /* Add styles to the search box */
 
 </style>
@@ -301,52 +326,17 @@
     </div>
     
     <div class="contenedor-texto-3">
-        <style>
-            .btn {
-                  width: 9em;
-                  height: 3em;
-                  border-radius: 30em;
-                  font-size: 15px;
-                  font-family: inherit;
-                  border: none;
-                  position: relative;
-                  cursor: pointer;
-                  overflow: hidden;
-                  color: #ffffff;
-                  z-index: 1;
-                  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff ;
-                  left: -150px;
-            }
-  
-            .btn::before {
-                  content: '';
-                  width: 0;
-                  height: 3em;
-                  border-radius: 30em;
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  background-image: linear-gradient(to right, #fca4a6 0%,#C1576A,#A83E51 100%);
-                  transition: .5s ease;
-                  display: block;
-                  z-index: -1;
-            }
-              .btn:hover::before {
-                  width: 9em;
-  
-          
-              }
-              
-  
-            
-            
-          </style>
+        
 
           <div class ="contenedor_imagenes_2">
             <img src="vasos (1).PNG">
           </div>
           
-          <button class="btn">Get Started</button></a>
+        
+          <button class="btn" onclick="window.open('extra.html')">Registrate</button>
+
+
+          
    
         </div>
     
@@ -409,45 +399,7 @@
       
       <div class="contenedor-texto-6">
 
-        <style>
-          
-          
-          button {
-                  width: 9em;
-                  height: 3em;
-                  border-radius: 30em;
-                  font-size: 15px;
-                  font-family: inherit;
-                  border: none;
-                  position: relative; left: 150px;
-                  cursor: pointer;
-                  overflow: hidden;
-                  color: #ffffff;
-                  
-                  z-index: 1;
-                  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff ;
-                  left: -150px;
-            }
-  
-            button::before {
-                  content: '';
-                  width: 0;
-                  height: 3em;
-                  border-radius: 30em;
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  background-image: linear-gradient(to right, #fca4a6 0%,#C1576A,#A83E51 100%);
-                  transition: .5s ease;
-                  display: block;
-                  z-index: -1;
-            }
-              button:hover::before {
-                  width: 9em;
-  
-          
-              }
-        </style>
+       
         <button onclick="changeContent(1)">Button 1</button>
         <button onclick="changeContent(2)">Button 2</button>
         <button onclick="changeContent(3)">Button 3</button>
@@ -497,8 +449,12 @@
                   image.src = "vasos (1).PNG";
                   text.innerHTML = "Para nosotros lo mas importante eres tu y por eso cada servicio es unico, aun asi es nuestro deber como empresa mostrar la calidad y excelencia en nuestros servicios es por eso que aqui veras nuestros servicios mas solicitados ";
                   break;
+
+               
+
               }
             }
+            
             
           
           </script>
