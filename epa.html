@@ -1,100 +1,65 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Caracter u!</title>
-  <link rel="stylesheet" href="Untitled-1.css">
-  
+	<title>Partículas que siguen el cursor</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+		canvas {
+			display: block;
+		}
+	</style>
 </head>
-<div class="container">
-    
-  
-    <body>
-    <header>
-        
-        
-        <div class="logo-container">
-            <h1>Caracter U!</h1>
-        
-            <div class="footer-container">
-                
-                <h4>Menú
-                    <a href="#Inicio">Inicio</a>
-                    <a href="#Servicios">Servicios</a>
-                    <a href="#Reseñas">Reseñas</a>
-                    <a href="#Contacto">Contacto</a>
-                </h4>
-            </div> 
-        </section>
-        
-    </header>
-    
-    <section>
-        <div class="header">
-            <h2 id="Inicio">Caracter U!</h2>
-        </div>
-        <div class="service">
-            <p>Somos una empresa líder en la industria que se especializa en ofrecer soluciones innovadoras. Nuestro equipo de expertos altamente capacitados está comprometido en brindar resultados de calidad y satisfacción al cliente.</p>
-        </div>
-    </section>
-    
-    
-    <section>
-        <div class="header">
-            <h2 id="Servicios">Nuestros Servicios</h2>
-        </div>
-        <div class="contenedor-texto-2">
-            <ul>
-                <li class="review">
-                    <h3>Servicio 1</h3>
-                    <p>Descripción del servicio 1.</p>
-                    <p>Precio: $XX.XX</p>
-                </li>
-                <li class="review">
-                    <h3>Servicio 2</h3>
-                    <p>Descripción del servicio 2.</p>
-                    <p>Precio: $XX.XX</p>
-                </li>
-                <li class="review">
-                    <h3>Servicio 3</h3>
-                    <p>Descripción del servicio 3.</p>
-                    <p>Precio: $XX.XX</p>
-                </li>
-            </ul>
-        </div>
-    </section>
-    
-    
-    <section>
-        <div class="header">
-            <div class="contenedor-texto-4">
-                    <h2 id="Reseñas"></h2>
-                    <div class="slider_2">
-                        <img src="Captura de pantalla (670).png">
-                        <img src="Captura de pantalla (669).png">
-                        <img src="Captura de pantalla (673).png">
-                        <img src="Captura de pantalla (667).png">
-                    </div>
-            </div>
-    </section>
-    
-    
-    <footer>
-        
-        <div class="footer-container">
-            <h2 id="Contacto">Contacto</h2>
-            <ul>
-                <li><a  href="extra.html">Contactanos</a></li>
-                
-                  
-                <li><a class="facebook" href="https://www.facebook.com">Facebook</a></li>
-                <li><a class="instagram" href="https://www.instagram.com/caracter.u/">Instagram</a></li>
-                <li><a class="twitter" href="https://twitter.com">Twitter</a></li>
-            </ul>
-            
-        </div>
-      </footer>
-      
-    </body>
-</div>
+<body>
+	<canvas></canvas>
+	<script>
+		const canvas = document.querySelector('canvas');
+		const c = canvas.getContext('2d');
+		canvas.width = window.innerWidth;
+		canvas.height = window.innerHeight;
+
+		const mouse = {
+			x: innerWidth / 2,
+			y: innerHeight / 2
+		};
+
+		window.addEventListener('mousemove', (event) => {
+			mouse.x = event.clientX;
+			mouse.y = event.clientY;
+		});
+
+		class Particle {
+			constructor(x, y, radius, color) {
+				this.x = x;
+				this.y = y;
+				this.radius = radius;
+				this.color = color;
+			}
+
+			draw() {
+				c.beginPath();
+				c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+				c.fillStyle = this.color;
+				c.fill();
+			}
+
+			update() {
+				this.draw();
+				this.x = mouse.x;
+				this.y = mouse.y;
+			}
+		}
+
+		const init = () => {
+			const particle = new Particle(innerWidth / 2, innerHeight / 2, 10, 'white');
+			particle.draw();
+			particle.update();
+		}
+
+		init();
+	</script>
+</body>
 </html>

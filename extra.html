@@ -4,6 +4,7 @@
   <title>Página de Registro</title>
   <link rel="stylesheet" href="extra.css">
   <style>
+
     *{
     
     margin: 0;
@@ -17,50 +18,53 @@
   position:fixed;left: 120px;
   padding-left:450px;
   padding-top:390px;  
+
   
 }
-button {
-            width: 9em;
-            height: 3em;
-            border-radius: 30em;
-            font-size: 15px;
-            font-family: inherit;
-            border: none;
-            position: relative; left: 0px;
-            cursor: pointer;
-            overflow: hidden;
-            color: #2f5874;
-            background-color: #ffffff8a;
-            z-index: 29;
-            box-shadow: none;
-            left: 150px;
-      }
 
-      button::before {
-            content: '';
-            width: 0;
-            height: 3em;
-            border-radius: 30em;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-image: linear-gradient(to right, #6d7681 0%,#2d3158,#0a1a47 100%);
-            transition: 0.5s ease;
-            display: block;
-            z-index: 30;
-      }
-        button:hover::before {
-            width: 9em;
-
+        button {
+    width: 9em;
+    height: 3em;
+    border-radius: 30em;
+    font-size: 15px;
+    font-family: inherit;
+    border: none;
+    position: relative; left: 0px;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: #49546b54;
+    color: #ffffff;
     
-        }
+    z-index: 1;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff ;
+    left: 150px;
+  }
+
+  button::before {
+        content: '';
+        width: 0;
+        height: 3em;
+        border-radius: 30em;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: linear-gradient(to right, #959797 0%,#49546b,#303f4d 100%);
+        transition: .5s ease;
+        display: block;
+        z-index: -1;
+  }
+    button:hover::before {
+        width: 9em;
+
+
+    }
 .contenedor-texto-1 {
   
   width: 400px; /* Cambia el ancho del contenedor según tus necesidades */
   height: 200px; /* Cambia la altura del contenedor según tus necesidades */
   padding-left: 0px;
   padding-top:100px;    
-  color: #3f4864;
+  color: #b6bbc9;
   display: flex; /* Utilizamos flexbox para centrar la imagen */
   justify-content: center; /* Centra horizontalmente la imagen */
   align-items: center; /* Centra verticalmente la imagen */
@@ -287,7 +291,7 @@ body{
 </head>
 <body>
   <div class="contenedor-texto-1">
-    Coffee Drink 3D
+    Waterfall tools
   </div> 
   <div class = "box">
     <span class = "borderline"></span>

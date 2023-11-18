@@ -1,941 +1,1247 @@
 <!DOCTYPE html>
-<html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 
 <style>
-  *{
-    background-color: #feaea7;
+  * {
+      
+    color: #ffffff;
   }
-button {
-            width: 9em;
-            height: 3em;
-            border-radius: 30em;
-            font-size: 15px;
-            font-family: inherit;
-            border: none;
-            position: relative; left: 150px;
-            cursor: pointer;
-            overflow: hidden;
-            color: #ffffff;
-            
-            z-index: 1;
-            box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff ;
-            left: -150px;
-      }
+  .header_container{
+    width: 100%;
+    height:70px;
+    position:sticky;top:0;
+    position:fixed;left:0px;
+    z-index: 100;
+    background-color: #131419;
 
-      button::before {
-            content: '';
-            width: 0;
-            height: 3em;
-            border-radius: 30em;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-image: linear-gradient(to right, #fca4a6 0%,#C1576A,#A83E51 100%);
-            transition: .5s ease;
-            display: block;
-            z-index: -1;
-      }
-        button:hover::before {
-            width: 9em;
+  }
+  .header {
+    position:sticky;top:0;
+    position:fixed;right:0px;
+    color: #ffffff;
+    width: 100%; /* Cambia el ancho del contenedor según tus necesidades */
+    height: 40px; /* Cambia la altura del contenedor según tus necesidades */
+    justify-content: center; /* Centra horizontalmente la imagen */
+    background-color: #10111400;
+    z-index: 100;
+    
+  }
+
+
+
+  /* Add styles to the navigation bar */
+  .header a {
+    float: left;
+    background-color: #13141900;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 25px; 
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  }
+  .header a.active {
+    position: sticky;top:-10px;
+    position: relative;left:-20px;
+    background-color: #21507700;
+    color: white;
+    padding-right: 0px;
+    z-index: 5;
+  }
+  .navbar{
+    
+    width: 85%;
+    margin: auto;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+
+
+  .navbar ul li {
+    list-style: none;
+    display: inline-block;
+    
+    position: relative;top:-10px;
+  }
+  .navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  .navbar ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background-image: linear-gradient(to right, #1b1b1b 0%,#818794,#bac8d6 100%);
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    transition: 0.5s;
+  }
+
+  .navbar ul li:hover::after {
+    width: 100%;
+  }
+
+
+
+
+
+
+  span {
+    
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    transition: 0.5s;
+    left: 0;
+    bottom: -20px;
+    z-index: -1;
+
+  }
+    
+  button {
+    width: 9em;
+    height: 3em;
+    border-radius: 30em;
+    font-size: 15px;
+    font-family: inherit;
+    border: none;
+    position: relative; left: 150px;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: #49546b54;
+    color: #ffffff;
+    
+    z-index: 1;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff ;
+    left: -150px;
+  }
+
+  button::before {
+        content: '';
+        width: 0;
+        height: 3em;
+        border-radius: 30em;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-image: linear-gradient(to right, #959797 0%,#49546b,#303f4d 100%);
+        transition: .5s ease;
+        display: block;
+        z-index: -1;
+  }
+    button:hover::before {
+        width: 9em;
+
+
+    }
+
+  .contenedor_imagenes_1 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding:20px;
+    background-color: #131419; ;
+    font-size: 20px;
+    font-family:Arial, Helvetica, sans-serif ;
+    z-index: 1;
+  }
+
+  .imagen_1, .imagen_2, .imagen_3, .imagen_4 {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+  }
+
+  .imagen_1 img, .imagen_2 img, .imagen_3 img, .imagen_4 img {
+      height: 300px;
+      width: 300px;
+      object-fit: cover;
+      z-index: 1;
+    
+  }
+
+  .imagen_1 p, .imagen_2 p, .imagen_3 p, .imagen_4 p {
+      margin-top: auto;
+      z-index: 1;
+  }
+
 
     
-        }
-
-.contenedor_imagenes_1 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  padding:20px;
- 
-  font-size: 20px;
-  font-family:Arial, Helvetica, sans-serif ;
-  z-index: 1;
-}
-
-.imagen_1, .imagen_2, .imagen_3, .imagen_4 {
-  display: flex;
-  flex-direction: column;
-  z-index: 1;
-}
-
-.imagen_1 img, .imagen_2 img, .imagen_3 img, .imagen_4 img {
-    height: 300px;
-    width: 300px;
-    object-fit: cover;
-    z-index: 1;
-   
-}
-
-.imagen_1 p, .imagen_2 p, .imagen_3 p, .imagen_4 p {
-    margin-top: auto;
-    z-index: 1;
-}
-
-
-  
-.text-container{
-  
-  width: 1000px; /* Cambia el ancho del contenedor según tus necesidades */
-  height: 1000px; /* Cambia la altura del contenedor según tus necesidades */   
-  position:relative;top: 50px;
-  position:relative;left:0px;
-  z-index: 0;
-  font-size: 30px;
-  justify-content: center; /* Centra horizontalmente la imagen */
-  
-}
-.image-container {
-  
-  
-  width: 0px; /* Cambia el ancho del contenedor según tus necesidades */
-  height: 0px; /* Cambia la altura del contenedor según tus necesidades */
-  padding:20px;
-  
-  font-size: 20px;
-  font-family:Arial, Helvetica, sans-serif ;
-  position:absolute;top: 200px;
-  position:absolute;left: 400px;
-  z-index: 1;
-
-
-}
-.image-container img{
-  width: 200px; /* Cambia el ancho del contenedor según tus necesidades */
-  height: 200px; /* Cambia la altura del contenedor según tus necesidades */
-  object-fit: cover;
-}
-/* Add styles to the header */
-.contenedor-texto-1 {
-  
-    width: 400px; /* Cambia el ancho del contenedor según tus necesidades */
-    height: 200px; /* Cambia la altura del contenedor según tus necesidades */
-    padding-left: 100px;
-    padding-top:100px;    
-    color: #ffffff;
-    display: flex; /* Utilizamos flexbox para centrar la imagen */
-    justify-content: center; /* Centra horizontalmente la imagen */
-    align-items: center; /* Centra verticalmente la imagen */
-    font-size: 100px;
+  .text-container{
+    
+    width: 1000px; /* Cambia el ancho del contenedor según tus necesidades */
+    height: 1000px; /* Cambia la altura del contenedor según tus necesidades */   
+    position:relative;top: 50px;
+    position:relative;left:0px;
     z-index: 0;
+    background-color: #131419;
+    font-size: 30px;
+    justify-content: center; /* Centra horizontalmente la imagen */
+    
   }
-  .contenedor-texto-2 {
+  .image-container {
+    
+    
+    width: 0px; /* Cambia el ancho del contenedor según tus necesidades */
+    height: 0px; /* Cambia la altura del contenedor según tus necesidades */
+    padding:20px;
+    
   
-  
-  width: 540px; /* Cambia el ancho del contenedor según tus necesidades */
-  height: 120px; /* Cambia la altura del contenedor según tus necesidades */
- 
-  padding-top:10px;    
-  position:relative;top: 20px;
-  position:relative;left: 100px;
-  z-index: 0;
-  color: #ffffff;
-  justify-content: center; /* Centra horizontalmente la imagen */
-  
-  font-size: 30px;
-}
-.contenedor-texto-3 {
-  
-  
-  width: 500px; /* Cambia el ancho del contenedor según tus necesidades */
-  height: 30px; /* Cambia la altura del contenedor según tus necesidades */
-  padding-left: 80px;
-  padding-top:10px;    
-  position:relative;top: 20px;
-  position:relative;left: 200px;
-  display: fixed; /* Utilizamos flexbox para centrar la imagen */
-  justify-content: center; /* Centra horizontalmente la imagen */
-  z-index: 3;
-  font-size: 30px;
-}
-.contenedor-texto-4 {
-  
-  
-  width: 99%; /* Cambia el ancho del contenedor según tus necesidades */
-  height: 400px; /* Cambia la altura del contenedor según tus necesidades */
-  padding-left: 0px;
-  padding-top:0px;    
-  position:relative;top: 200px;
-  position:relative;left: 20px;
-  z-index: 1;
-  font-size: 20px;
-  justify-content: center; /* Centra horizontalmente la imagen */
-  
-  
-}
-
-.contenedor-texto-5 {
-  
-  
-  width: 99%; /* Cambia el ancho del contenedor según tus necesidades */
-  height: 200px; /* Cambia la altura del contenedor según tus necesidades */
-  padding-left: 0px;
-  padding-top:0px;    
-  position:relative;top: 400px;
-  position:relative;left: 0px;
-  z-index: 0;
-  font-size: 40px;
- 
-  
-  
-  
-}
-.contenedor-texto-6 {
-  
-  
-  width: 99%; /* Cambia el ancho del contenedor según tus necesidades */
-  height: 800px; /* Cambia la altura del contenedor según tus necesidades */
-  padding-left: 150px;
-  padding-top:0px;    
-  position:relative;top: 40px;
-  position:relative;left: 0px;
-  z-index: 0;
-  font-size: 40px;
-  
-  
-  
-  
-}
+    position:absolute;top: 200px;
+    position:absolute;left: 400px;
+    z-index: 1;
+    background-color: none;
 
 
-.contenedor_imagenes_2 {
-  display: flex;
-  position:absolute;top: -450px;
-  position:absolute;left: 450px;
-  z-index: 0;
-  gap: 10px;
-  padding:20px;
+  }
+
+
+  .image-container img{
+    width: 200px; /* Cambia el ancho del contenedor según tus necesidades */
+    height: 200px; /* Cambia la altura del contenedor según tus necesidades */
+    object-fit: cover;
+  }
+  .image-container p{
+    position: absolute;
+    top: 0;
+    color: #dddddd;
+    background-color: none;
+    font-size: 20px;
+    font-family:Arial, Helvetica, sans-serif ;
+    z-index: 49;
+  }
+  .image-container::before {
+    content: ""; 
+    position: absolute;
+    top: 20;
+    left: 10;
+    width: 200px;
+    
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 41;
+  }
+  /* Add styles to the header */
+  .contenedor-texto-1 {
+    
+      width: 400px; /* Cambia el ancho del contenedor según tus necesidades */
+      height: 200px; /* Cambia la altura del contenedor según tus necesidades */
+      padding-left: 100px;
+      padding-top:100px;    
+      color: #ffffff;
+      display: flex; /* Utilizamos flexbox para centrar la imagen */
+      justify-content: center; /* Centra horizontalmente la imagen */
+      align-items: center; /* Centra verticalmente la imagen */
+      font-size: 100px;
+      z-index: 0;
+      background-color: #131419;
+    }
+    .contenedor-texto-2 {
+    
+    
+    width: 540px; /* Cambia el ancho del contenedor según tus necesidades */
+    height: 120px; /* Cambia la altura del contenedor según tus necesidades */
+    background-color: #131419;
+    padding-top:10px;    
+    position:relative;top: 20px;
+    position:relative;left: 100px;
+    z-index: 0;
+    color: #ffffff;
+    justify-content: center; /* Centra horizontalmente la imagen */
+    
+    font-size: 30px;
+  }
+  .contenedor-texto-3 {
+    
+    
+    width: 500px; /* Cambia el ancho del contenedor según tus necesidades */
+    height: 30px; /* Cambia la altura del contenedor según tus necesidades */
+    padding-left: 80px;
+    padding-top:10px;    
+    position:relative;top: 20px;
+    position:relative;left: 200px;
+    display: fixed; /* Utilizamos flexbox para centrar la imagen */
+    justify-content: center; /* Centra horizontalmente la imagen */
+    z-index: 3;
+    font-size: 30px;
+    background-color: #131419;
+  }
+  .contenedor-texto-4 {
+    
+    
+    width: 99%; /* Cambia el ancho del contenedor según tus necesidades */
+    height: 400px; /* Cambia la altura del contenedor según tus necesidades */
+    padding-left: 0px;
+    padding-top:0px;    
+    position:relative;top: 200px;
+    position:relative;left: 20px;
+    z-index: 1;
+    background-color: #131419;
+    font-size: 20px;
+    justify-content: center; /* Centra horizontalmente la imagen */
+    
+    
+  }
+
+  .contenedor-texto-5 {
+    
+    
+    width: 99%; /* Cambia el ancho del contenedor según tus necesidades */
+    height: 200px; /* Cambia la altura del contenedor según tus necesidades */
+    padding-left: 0px;
+    padding-top:0px;    
+    position:relative;top: 400px;
+    position:relative;left: 0px;
+    z-index: 0;
+    background-color: #131419;
+    font-size: 40px;
   
-  font-size: 20px;
-  font-family:Arial, Helvetica, sans-serif ;
-}
+    
+    
+    
+  }
+  .contenedor-texto-6 {
+    
+    background-color: #131419;
+    width: 99%; /* Cambia el ancho del contenedor según tus necesidades */
+    height: 800px; /* Cambia la altura del contenedor según tus necesidades */
+    padding-left: 150px;
+    padding-top:0px;    
+    position:relative;top: 40px;
+    position:relative;left: 0px;
+    z-index: 0;
+    
+    
+    
+    
+    
+  }
 
 
 
-.contenedor_titulo_imagenes {
-  
-  width: 500px; /* Cambia el ancho del contenedor según tus necesidades */
-  height: 30px; /* Cambia la altura del contenedor según tus necesidades */
-  padding-left: 80px;
-  padding-top:10px;    
-  position:relative;top: 200px;
-  position:relative;left: 0px;
-  display: fixed; /* Utilizamos flexbox para centrar la imagen */
-  justify-content: center; /* Centra horizontalmente la imagen */
-  z-index: 2;
-  font-size: 50px;
-  font-style: inherit;
-}
-.header {
-  position:sticky;top:0;
-  color: #ffffff;
-  width: 100%; /* Cambia el ancho del contenedor según tus necesidades */
-  height: 80px; /* Cambia la altura del contenedor según tus necesidades */
-  background-color: #feaea7;
-  z-index: 4;
-  
-}
+  .contenedor_imagenes_2 {
+    display: flex;
+    position:absolute;top: -450px;
+    position:absolute;left: 450px;
+    z-index: 0;
+    gap: 10px;
+    padding:20px;
+    
+    font-size: 20px;
+    font-family:Arial, Helvetica, sans-serif ;
+  }
+  .contenedor_imagenes_2 img{
 
-/* Add styles to the logo */
-.header img {
-  height: 50px;
-}
-
-/* Add styles to the navigation bar */
-.header a {
-  float: left;
-  background-color: #feaea7;
-  text-align: center;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 30px; 
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-
-}
+    width: 500px; /* Cambia el ancho del contenedor según tus necesidades */
+    height: 500px; /* Cambia la altura del contenedor según tus necesidades */
+    object-fit: cover;
+    box-shadow: #ffffff;
+    background-color: rgba(0, 0, 0, 80)
+  }
 
 
-.slider {
-  
-  position:absolute;top: 0px;
-  position:absolute;left: 0px;
-  width: 1000px;
-  height: 1000px;;
-  
-  display: flex;
-  
-  
-}
-.slider #content {
-  display: inline-block;
-  text-align: center;
-  position:absolute;top: 0px;
-  position:absolute;left: 0px;
+  .contenedor_titulo_imagenes {
+    
+    width: 500px; /* Cambia el ancho del contenedor según tus necesidades */
+    height: 30px; /* Cambia la altura del contenedor según tus necesidades */
+    padding-left: 80px;
+    padding-top:10px;  
+    padding-bottom: 30px;  
+    position:relative;top: 200px;
+    position:relative;left: 0px;
+    display: fixed; /* Utilizamos flexbox para centrar la imagen */
+    justify-content: center; /* Centra horizontalmente la imagen */
+    z-index: 2;
+    background-color: #131419;
+    font-size: 50px;
+    font-style: inherit;
+  }
 
-}
 
-/* Add styles to the active navigation bar item */
-.header a.active {
-  background-color: #feaea7;
-  color: white;
-  padding-left: 100px;
-  z-index: 4;
-}
 
-/* Add styles to the right-aligned navigation bar item */
-.header-right {
-  float: right;
-  z-index: 4;
-  padding-right: 100px;
-}
-body a{
-  text-decoration: none;
-}
-/* Add styles to the search box */
+  .slider {
+    
+    position:absolute;top: 0px;
+    position:absolute;left: 0px;
+    width: 1000px;
+    height: 1000px;;
+    
+    display: flex;
+    
+    background-color: #131419;
+  }
+  .slider #content {
+    display: inline-block;
+    text-align: center;
+    position:absolute;top: 0px;
+    position:absolute;left: 0px;
+    background-color: #131419;
+
+  }
+
+  /* Add styles to the active navigation bar item */
+
+
+  /* Add styles to the right-aligned navigation bar item */
+
+  body {
+    background-color: #131419;
+  }
+
+  body a{
+    text-decoration: none;
+  }
+
+
+  footer {
+    display: flex;
+    background: #333;
+    justify-content: flex-end;
+    align-items: flex-end;
+    min-height: auto;
+  }
+
+  .footer {
+    position: relative;
+    width: 100%;
+    background: #e3e7f5;
+    min-height: 100px;
+    color: #131419;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  footer p{
+    position: relative;right:-40px;
+    position: relative;top:-30px;
+    font-family: sans-serif;
+    font-size: 100px;
+
+  }
+
+
+  .menu {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px ;
+
+    flex-wrap: wrap;
+  }
+
+  .menu a{
+    position: relative;right:100px;
+    padding: 10px;
+    color: #000000;
+  }
+  .menu__item {
+    list-style: none;
+
+  }
+
+
+
+  .menu__link {
+    
+    color: #000000;
+    margin: 10px;
+    display: inline-block;
+    transition: 0.5s;
+    text-decoration: none;
+    opacity: 0.75;
+    
+  }
+
+  .menu__link:hover {
+    opacity: 1;
+  }
+
+  .fa {
+  transition: all 0.2s ease-in-out;
+  }
+
+  .fa:hover {
+    transform: scale(2.8);
+  }
+
+
+  .footer p{
+    color: #000000;
+
+    
+    font-size: 20px;
+   
+  }
+
+  .wave {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url("wave.png");
+    background-size: 1000px 100px;
+  }
+
+  .wave#wave1 {
+    z-index: 1000;
+    opacity: 0.5;
+    bottom: 0;
+    animation: animateWaves 4s linear infinite;
+  }
+
+  .wave#wave2 {
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 10px;
+    animation: animate 4s linear infinite !important;
+  }
+
+  .wave#wave3 {
+    z-index: 1000;
+    opacity: 0.8;
+    bottom: 15px;
+    animation: animateWaves 3s linear infinite;
+  }
+
+  .wave#wave4 {
+    z-index: 999;
+    opacity: 1;
+    bottom: 20px;
+    animation: animate 3s linear infinite;
+  }
+
+  @keyframes animateWaves {
+    0% {
+      background-position-x: 1000px;
+    }
+    100% {
+      background-positon-x: 0px;
+    }
+  }
+
+  @keyframes animate {
+    0% {
+      background-position-x: -1000px;
+    }
+    100% {
+      background-positon-x: 0px;
+    }
+  }
+  /* Add styles to the search box */
 
 </style>
-<head>
-  <div class="header">
+<html>
+  <head>
     
     
-    <a class="active">Caracter U!</a>
-  
-  
-  
-  
-    <div class="header-right">
-        
-      <a href="#Inicio">Home</a>
-      <a href="#Nosotros">About</a>
-      <a href="#Servicios">Services</a>
-      <a href="#Reseñas">Reseñas</a>
-      <a href="#Contacto">Contacto</a>
-    </div>
-  </div>
-</head>
-<body>
-  <div class="container">
-
-    
-    <br>
-    <h2 id="Inicio"></h2>
-    <div class="contenedor-texto-1">
-        Coffee Drink 3D
-    </div>
-    <br>
-    <div class="contenedor-texto-2">
-      lets help discover the best coffee drink of the week
-    </div>
-    
-    <div class="contenedor-texto-3">
-        
-
-          <div class ="contenedor_imagenes_2">
-            <img src="vasos (1).PNG">
-          </div>
-          
-        
-          <button class="btn" onclick="window.open('extra.html')">Registrate</button>
-
-
-          
-   
-        </div>
-    
-   <div class="contenedor_titulo_imagenes"> 
-         <h2 id="Nosotros"></h2> 
-         <br>
-         Sobre Nosotros    
-   
-    </div>   
-    
-    <div class="contenedor-texto-4">
-       <br>
-       <br>
-       <br>
-        
-       <br>
-       <br>
       
-      <div class="contenedor_imagenes_1">
-          <div class="imagen_1">
-            <img src="vasos (1).PNG">
-            <p>¡¡¡Con Caracter U! un lugar lindo pasara a ser hermoso!!!</p>
-          </div>
-          <div class="imagen_2">
-            <img src="vasos (1).PNG">
-            <br>
-            <p>Caracter U! te asegura un servicio que erradicara virus y bacterias.</p>
-          </div>
-          <div class="imagen_3">
-            <img src="vasos (1).PNG">
-            <p>Con Caracter U! podras ofrecerle comodidad incluso a tus mascotas </p>
-          </div>
-          <div class="imagen_4">
-            <img src="vasos (1).PNG">
-            <p>Te puedes contactar con Caracter U! <a href="https://www.instagram.com/caracter.u/">Instagram has click aqui :3</a></p>
-          </div>
-        </div>
-          
-          
-      </div>  
-      <br>
-      <br>
-      <br> 
-   </div>
-    <br>
-    <br>
-    <br>
     
-    <br>
-    <br>
-    
-    <br>
-    
-    <div class ="contenedor-texto-5">
-      
-      
-      <p>Caracter_U! posee una gran variedad de servicios dado que nos adaptamos a las necesidades de nuestros clientes,aun asi aqui tenemos una muestra de estos:</p>
-      <h2 id="Servicios"></h2>
-      <br>
-      
-      <div class="contenedor-texto-6">
 
-       
-        <button onclick="changeContent(1)">Button 1</button>
-        <button onclick="changeContent(2)">Button 2</button>
-        <button onclick="changeContent(3)">Button 3</button>
-        <button onclick="changeContent(4)">Button 4</button>
-        <div class="idcontainer">
-          <a id="Servicios"></a> 
-        </div>
+    <div class="header_container">
+      <div class="header">
         
-        <div class="slider">
-          
-          <div class="image-container">
+        
+        
+          <div class="navbar">
             
-            <img id="image" src="vasos (1).PNG">
-          </div>
           
-          <div class="text-container">
-            
-            <p id="text">Para nosotros lo mas importante eres tu y por eso cada servicio es unico, aun asi es nuestro deber como empresa mostrar la calidad y excelencia en nuestros servicios es por eso que aqui veras nuestros servicios mas solicitados </p>
-          </div>
+            <a class="active">Waterfall_tools</a>
+                    
+            <ul>
               
-            
+              <li><a href="#Inicio">Home</a></li>
+              <li><a href="#Nosotros">About</a></li>
+              <li><a href="#Servicios">Services</a></li>
+              <li><a href="#Opiniones">reviews</a></li>
+              <li><a href="#Contacto">Contact</a></li>
+
+            </ul>
+        </div>
         
-       
-          <script>
-            function changeContent(buttonNumber) {
-              var image = document.getElementById("image");
-              var text = document.getElementById("text");
+      </div>
+    </div>
+    
+    
+        
+    
+  </head>
+  <body>
+    
+    <div class="container">
+
+      
+      <br>
+      <h2 id="Inicio"></h2>
+      <div class="contenedor-texto-1">
+          Watterfall Tools
+      </div>
+      <br>
+      <div class="contenedor-texto-2">
+        Crea una cuenta y comentanos tu problema nosotros hallaremos una solucion.
+      </div>
+      
+      <div class="contenedor-texto-3">
+          
+
+            <div class ="contenedor_imagenes_2">
+              <img src="OIG (1).jpg">
+            </div>
+            
+          
+            <button class="btn" onclick="window.open('extra.html')">Registrate</button>
+
+
+            
+    
+          </div>
+      
+    <div class="contenedor_titulo_imagenes"> 
+          <h2 id="Nosotros"></h2> 
+          <br>
+          Sobre Nosotros    
+    
+      </div>   
+      
+      <div class="contenedor-texto-4">
+        <br>
+        <br>
+        <br>
+          
+        <br>
+        <br>
+        
+        <div class="contenedor_imagenes_1">
+            <div class="imagen_1">
+              <img src="vasos (1).PNG">
+              <p>Somos pioneros en la implementacion de tecnologias IoT en diversos entornos</p>
+            </div>
+            <div class="imagen_2">
+              <img src="vasos (1).PNG">
+              <br>
+              <p>Tenemos un personal con conocimientos multidisciplinarios por lo que podemos atender tus necesidades</p>
+            </div>
+            <div class="imagen_3">
+              <img src="vasos (1).PNG">
+              <p>Buscamos un empleo y servicios que sean humanos y adecuados para la empresa y el cliente </p>
+            </div>
+            <div class="imagen_4">
+              <img src="vasos (1).PNG">
+              <p>Si deseas trabajar con nosotros no te preocupes por tus conocimientos nosotros nos encargamos</p>
+            </div>
+          </div>
+            
+            
+        </div>  
+        <br>
+        <br>
+        <br> 
+    </div>
+      <br>
+      <br>
+      <br>
+      
+      <br>
+      <br>
+      
+      <br>
+      
+      <div class ="contenedor-texto-5">
+        
+        
+        <p>Waterfall_tools posee una gran variedad de servicios dado que nos adaptamos a las necesidades de nuestros clientes,aun asi aqui tenemos una muestra de estos:</p>
+        <h2 id="Servicios"></h2>
+        <br>
+        
+        <div class="contenedor-texto-6">
+
+        
+          <button onclick="changeContent(1)">IoT</button>
+          <button onclick="changeContent(2)">APIs</button>
+          <button onclick="changeContent(3)">Cloud Service</button>
+          <button onclick="changeContent(4)">Big data</button>
+          <div class="idcontainer">
+            <a id="Servicios"></a> 
+          </div>
+          
+          <div class="slider">
+        
+            
+            <div class="image-container">
+            
+                
+                
+          
               
-              switch(buttonNumber) {
-                case 1:
-                  image.src = "vasos (1).PNG";
-                  text.innerHTML = "Nuestro servicio de mantenimiento:Consta de una limpieza profunda del material que se compone el mueble de esta manera lucira como nuevo al retirar los excesos de piel, grasa, polvo, pelos, boronas, residuos comunes, etc...";
-                  break;
-                case 2:
-                  image.src = "vasos (1).PNG";
-                  text.innerHTML = "Retiramiento de manchas:Este servicio a diferencia del numero 1° requiere un estudio del liquido u objeto que causo la mancha y por ende utilizamos diferentes productos segun sea el caso ";
-                  break;
-                case 3:
-                  image.src = "vasos (1).PNG";
-                  text.innerHTML = "Desinfeccion:Al igual que el numero dos requiere un estudio previo a la limpieza dado el tipo de posible parasito presente en el mueble";
-                  break;
-                case 4:
-                  image.src = "vasos (1).PNG";
-                  text.innerHTML = "Finalmente te invito a que te registres nos cuentes tu caso y de esa manera podamos ofrecerte un servicio de calidad";
-                  break;
-                default:
-                  image.src = "vasos (1).PNG";
-                  text.innerHTML = "Para nosotros lo mas importante eres tu y por eso cada servicio es unico, aun asi es nuestro deber como empresa mostrar la calidad y excelencia en nuestros servicios es por eso que aqui veras nuestros servicios mas solicitados ";
-                  break;
+              <img id="image" src="vasos (1).PNG">
+              <p id="text2">dadasdasadsaaaaaa  cxczxca da dsa das das d sd a sa dsa  dasda d  das  das das da</p>
+            </div>
+          
+            <div class="text-container">
+              
+              <p id="text">Para nosotros lo mas importante eres tu y por eso cada servicio es unico, aun asi es nuestro deber como empresa mostrar la calidad y excelencia en nuestros servicios es por eso que aqui veras nuestros servicios mas solicitados </p>
+            
+            </div>
+                
+              
+          
+        
+            <script>
+              function changeContent(buttonNumber) {
+                var image = document.getElementById("image");
+                var text = document.getElementById("text");
+                var text2 = document.getElementById("text2");
+                
+                switch(buttonNumber) {
+                  case 1:
+                    image.src = "R.jpg";
+                    text.innerHTML = "Nuestras impletaciones IoT van desde sistemas comunes como casas domoticas hasta sistemas de monitoreo de areas remotas con cobertura vegetal ";
+                    text2.innerHTML = "nose";
+                    break;
+                  case 2:
+                    image.src = "R (1).jpg";
+                    text.innerHTML = "Ahora bien si deseas tener una implementacion de APIs como solucion de un problema de tu empresa u hogar nosotros nos encargamos y hacemos la coneccion con servicios como gmail, github, facebook, ETC...";
+                    text2.innerHTML = "nose1";
+                    break;
+                  case 3:
+                    image.src = "OIG.jpg";
+                    text.innerHTML = "Nuestros servicios están diseñados para ser escalables, flexibles y rentables, lo que nos permite implementar y administrar rápidamente su infraestructura de TI sin tener que invertir en hardware o software costoso";
+                    text2.innerHTML = "nose3";
+                    break;
+                  case 4:
+                    image.src = "big-data1.jpg";
+                    text.innerHTML = "Dada la naturaleza de nuestra empresa contamos con una extensa fuente de recursos de almacenamiento por lo que estos estan tambien en disposicion para nuestros clientes esto con cita previa y un estudio de sus necesidades";
+                    text2.innerHTML = "nose4";
+                    break;
+                  default:
+                    image.src = "vasos (1).PNG";
+                    text.innerHTML = "Para nosotros lo mas importante eres tu y por eso cada servicio es unico, aun asi es nuestro deber como empresa mostrar la calidad y excelencia en nuestros servicios es por eso que aqui veras nuestros servicios mas solicitados ";
+                    text2.innerHTML = "si se";
+                    break;
 
-               
+                
 
+                }
               }
-            }
+              
+              
             
+            </script>
             
+          </div>
           
-          </script>
+        </div>      
+      </div>   
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    
           
-        </div>
         
-      </div>      
-    </div>   
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-  
-        
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
       
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    
-    
       
-   
+        
+    
 
 
-        
+          
 
+          
+          
+          
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    
+          
         
-        
-        
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-  
-        
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
       
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    
-    
       
-   
+        
+    
 
 
-        
+          
 
-        
-        
-        
-        
+          
+          
+          
+          
 
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-  
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    
+          
         
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
       
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    
-    
       
-   
+        
+    
 
 
-        
+          
 
-        
-        
-        
-        
+          
+          
+          
+          
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-  
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    
+          
         
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
       
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    
-    
       
-   
+        
+    
 
 
-        
+          
 
-        
-        
-        
-        
+          
+          
+          
+          
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-  
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    
+          
         
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
       
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    
-    
       
-   
+        
+    
 
 
-        
+          
 
-        
-        
-        
-        
+          
+          
+          
+          
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-  
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    
+          
         
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
       
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    
-    
       
-   
+        
+    
 
 
-        
+          
 
-        
-        
-        
-        
+          
+          
+          
+          
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-  
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    
+          
         
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
       
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    
-    
       
-   
+        
+    
 
 
-        
+          
 
-        
-        
-        
-        
+          
+          
+          
+          
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-  
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    
+          
         
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
       
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    
-    
       
-   
+        
+    
 
 
-        
+          
 
-        
-        
-        
-        
+          
+          
+          
+          
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-  
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    
+          
         
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
       
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    
-    
       
-   
-
-
         
-
-        
-        
-        
-        
-
-
-
-
-
     
-  </div>
-</body>
+
+
+          
+
+          
+          
+          
+          
+
+
+
+
+
+      
+    </div>
+  </body>
+    <h2 id="Contacto"></h2>
+
+    <footer class="footer">
+      <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+      </div>
+      
+      </ul>
+      <ul class="menu">
+        <p>Waterfall_tools</p>
+        <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" style="color:blue;"></i></a>
+        <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin" style="color:rgb(24, 158, 248);"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram" style="color:rgb(255, 0, 98);"></i></a>
+        <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" style="color:rgb(18, 18, 32);"></i></a>
+        <a href="extra.html" target="_blank"><i class="fa fa-file-text" style="color:rgb(119, 0, 255);"></i></a>
+
+      </ul>
+      
+    </footer>
+
+          
+
 </html>
