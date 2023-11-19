@@ -63,8 +63,8 @@
   width: 400px; /* Cambia el ancho del contenedor según tus necesidades */
   height: 200px; /* Cambia la altura del contenedor según tus necesidades */
   padding-left: 0px;
-  padding-top:100px;    
-  color: #b6bbc9;
+  padding-top:0px;    
+  color: #ffffff;
   display: flex; /* Utilizamos flexbox para centrar la imagen */
   justify-content: center; /* Centra horizontalmente la imagen */
   align-items: center; /* Centra verticalmente la imagen */
@@ -72,12 +72,14 @@
   z-index: 0;
 }
 body{
+    background-image: url('pedro.jpg');
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #23242a;
+    background-size: cover;
 }
+
 
 .box{
     position: relative;
@@ -96,7 +98,7 @@ body{
     top: -50%;
     left: -50%;
     transform-origin: bottom right;
-    background: linear-gradient(0deg,transparent,transparent,#0490ee,#0490ee,#0490ee);
+    background: linear-gradient(0deg,transparent,transparent,#ffffff,#757575,#000000);
     z-index: 1;
     animation: animate 6s linear infinite;
 
@@ -109,7 +111,7 @@ body{
     top: -50%;
     left: -50%;
     transform-origin: bottom right;
-    background: linear-gradient(0deg,transparent,transparent,#0490ee,#0490ee,#0490ee);
+    background: linear-gradient(0deg,transparent,transparent,#000000,#747474,#ffffff);
     z-index: 1;
     animation: animate 6s linear infinite;
     animation-delay: -3s;
@@ -188,7 +190,7 @@ body{
     padding: 20px 10px 10px;
     background: transparent;
     outline: none;
-    color: #030303;
+    color: #03030380;
     box-shadow: none;
     font-size: 1em;
     font-weight: 700;
