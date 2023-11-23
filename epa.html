@@ -1,66 +1,36 @@
-<!DOCTYPE html>
 <html>
 <head>
-	
-	<style>
-		body {
-			margin: 0;
-			padding: 0;
-			overflow: hidden;
+    <style>
+        .card {
+			inline-size: 10vmin;
+			block-size: 10vmin;
+
+			border: 1vmin solid hsl(100 100% 60%);
+			border-image-slice: 1;
+
+			/*  leverage cascade for cross-browser gradients  */
+			border-image-source: linear-gradient(
+				hsl(100 100% 60%),
+				50%,
+				hsl(200 100% 60%)
+			);
+			border-image-source: radial-gradient(
+				hsl(100 100% 60%),
+				75%,
+				hsl(200 100% 60%)
+			);
+			border-image-source: conic-gradient(
+				hsl(100 100% 60%), 
+				hsl(200 100% 60%),
+				hsl(100 100% 60%)
+			);
 		}
-		canvas {
-			display: block;
-		}
-	</style>
+    </style>
 </head>
 <body>
-	<canvas></canvas>
-	<script>
-		const canvas = document.querySelector('canvas');
-		const c = canvas.getContext('2d');
-		canvas.width = window.innerWidth;
-		canvas.height = window.innerHeight;
-
-		const mouse = {
-			x: innerWidth / 2,
-			y: innerHeight / 2
-		};
-
-		window.addEventListener('mousemove', (event) => {
-			mouse.x = event.clientX;
-			mouse.y = event.clientY;
-		});
-
-		class Particle {
-			constructor(x, y, radius, color) {
-				this.x = x;
-				this.y = y;
-				this.radius = radius;
-				this.color = color;
-			}
-
-			draw() {
-				c.beginPath();
-				c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-				c.fillStyle = this.color;
-				c.fill();
-			}
-
-			update() {
-				this.draw();
-				this.x = mouse.x;
-				this.y = mouse.y;
-			}
-		}
-
-		const init = () => {
-			const particle = new Particle(innerWidth / 2, innerHeight / 2, 10, 'black');
-			particle.draw();
-			particle.update();
-		}
-
-		init();
-	</script>
+    <div class="card">
+		Conic Gradient Border
+	  </div>
 </body>
 </html>
 
