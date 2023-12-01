@@ -115,10 +115,11 @@ body{
     position: absolute;
     top: 0;
     inset: 0;
-
+    z-index: 100;
 }
 
 .borderLine::before {
+    
     width: 380px;
     height: 420px;
     content: '';
